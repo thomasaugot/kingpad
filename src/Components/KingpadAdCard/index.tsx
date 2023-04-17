@@ -68,17 +68,21 @@ export const KingpadAdCard = () => {
     <KingpadAdCardContainer>
       <KingpadAdImage src={KingpadAdBackground} alt="kingpad-ad-image" />
       <KingpadAdContent>
-        <AdContentTitle>Don’t miss the upcoming launch on Kingpad</AdContentTitle>
+        <AdContentTitle>Don't miss {project?.name}, soon launching at Kingpad</AdContentTitle>
         {/* <AdContentImage src={KingpadAdLogo} alt="ad-image" /> */}
         <EndInContainer>
           <CardLabel>Starts in</CardLabel>
           <CountDown timestamp={timestamp} />
         </EndInContainer>
-        <TokenExplorer
-          // onClick={() => navigate(`/${status === 'KingSale' ? 'kingsale-explore' : 'kingstarter-explore'}?id=${adId}`)}
-          onClick={() => navigate(`/${status === 'KingSale' ? 'kingsale-explore' : 'kingstarter-explore'}?id=1`)}
-        >
-          Explore
+        <TokenExplorer onClick={() => {
+              if (project?.name === "Onyx") {
+                window.open("https://www.onyx.game/","_blank");
+              } else {
+                navigate(`/${status === 'KingSale' ? 'kingsale-explore' : 'kingstarter-explore'}?id=${adId}`)
+              }
+            }
+          }>
+            Explore
         </TokenExplorer>
       </KingpadAdContent>
     </KingpadAdCardContainer>
@@ -90,19 +94,14 @@ const CountDown = (props: { timestamp: number }) => {
   const [timeLeft, setTimeLeft] = useState(getTimeLeft(timestamp));
 
   function getTimeLeft(timestamp: number) {
-    const now = Date.UTC(
-      new Date().getUTCFullYear(),
-      new Date().getUTCMonth(),
-      new Date().getUTCDate(),
-      new Date().getUTCHours(),
-      new Date().getUTCMinutes(),
-      new Date().getUTCSeconds(),
-      new Date().getUTCMilliseconds()
-    );
-    if (timestamp < now) {
-      timestamp = now;
+    const now = new Date()
+    const _timestamp = new Date(timestamp).getTime();
+    if (_timestamp < now.getTime()) {
+      timestamp = now.getTime();
     }
-    const totalSeconds = timestamp === 0 ? timestamp : Math.floor((timestamp - now) / 1000);
+    const offset = now.getTimezoneOffset() * 60 * 1000; // ottengo l'offset in millisecondi per la timezone corrente
+    const clientTimestamp = timestamp - offset; // aggiungo l'offset al timestamp passato come parametro
+    const totalSeconds = clientTimestamp === 0 ? clientTimestamp : Math.floor((clientTimestamp - Date.now()) / 1000);
     const days = Math.floor(totalSeconds / 86400);
     const hours = Math.floor((totalSeconds % 86400) / 3600);
     const minutes = Math.floor((totalSeconds % 3600) / 60);

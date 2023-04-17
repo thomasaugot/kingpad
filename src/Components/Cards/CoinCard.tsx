@@ -16,6 +16,7 @@ import { ethers } from 'ethers';
 import { getTotalDeposited } from 'src/Contracts/kingPad';
 import { currentTimeStamp } from 'src/Utils/utcTimePrinter';
 import { CradleOfSinsProjectName } from './KingstarterStatusCard';
+import { toast } from 'react-toastify';
 
 // status 1: upcoming, 2: ongong, 3: ended
 
@@ -129,11 +130,25 @@ export const CoinCard = (props: CoinCardProps) => {
           )}
           {time != null ? <CountDown timestamp={time} /> : '-'}
         </TokenLaunch>
-        {isKingStarter ? (
+        {/* {isKingStarter ? (
           <TokenExplorer onClick={() => navigate(`/kingstarter-explore?id=${id}`)}>Explore</TokenExplorer>
         ) : (
           <TokenExplorer onClick={() => navigate(`/kingsale-explore?id=${id}`)}>Explore</TokenExplorer>
-        )}
+        )} */}
+        <TokenExplorer onClick={() => {
+              if (id === 2) {
+                window.open("https://www.onyx.game/","_blank");
+              } else {
+                if (isKingStarter) {
+                  navigate(`/kingstarter-explore?id=${id}`);
+                } else {
+                  navigate(`/kingsale-explore?id=${id}`);
+                }
+              }
+            }
+          }>
+            Explore
+        </TokenExplorer>
       </TokenAction>
     </CardContainer>
   );

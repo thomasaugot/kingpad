@@ -31,6 +31,6 @@ const getChainId = (id: number) => {
     return generalData
 }
 
-const apiName = "testwebhooks"
+const apiName = "https://testapi.kingpad.finance"
 
 export { getChainId, apiName }
