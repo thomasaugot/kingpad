@@ -4,15 +4,16 @@ import './index.css';
 
 interface RaisedProps {
   raised: number;
+  chainId: number;
 }
 
 export const RaisedCircle = (props: RaisedProps) => {
-  const { raised } = props;
+  const { raised, chainId } = props;
   return (
     <RaisedCircleContainer>
       <RaisedText>Raised</RaisedText>
       <RaisedValue>{raised}</RaisedValue>
-      <BNBText>BNB</BNBText>
+      <BNBText>{chainId === 1 ? "ETH" : "BNB"}</BNBText>
     </RaisedCircleContainer>
   );
 };

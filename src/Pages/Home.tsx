@@ -115,6 +115,7 @@ export const Home = () => {
             youtube={card.youtube}
             key={card.id}
             id={card.id}
+            chainId={card.chainId}
           />
         ))}
       </CoinCards>

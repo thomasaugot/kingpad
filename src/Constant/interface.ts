@@ -63,6 +63,7 @@ export interface tokenDataProps {
 
 export interface CoinCardProps {
   id: number;
+  chainId: number;
   isKingStarter: boolean;
   status: string; // 0: all, 1: upcoming, 2: ongong, 3: ended
   token_address: string;
@@ -83,6 +84,7 @@ interface BadgeProps {
 
 export interface ActivePresaleProps {
   id: number;
+  chain_id: number;
   project_name: string;
   presale_start: string;
   presale_end: string;

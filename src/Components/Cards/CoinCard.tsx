@@ -23,6 +23,7 @@ import { toast } from 'react-toastify';
 export const CoinCard = (props: CoinCardProps) => {
   const {
     id,
+    chainId,
     isKingStarter,
     status,
     token_address,
@@ -36,6 +37,7 @@ export const CoinCard = (props: CoinCardProps) => {
     telegram,
     youtube
   } = props;
+  console.log("ao props? ", props)
 
   const navigate = useNavigate();
 
@@ -98,9 +100,9 @@ export const CoinCard = (props: CoinCardProps) => {
         <TokenProgressGraph>
           {isKingStarter ? (
             coinName === CradleOfSinsProjectName ? (
-              <RaisedCircle raised={1800} />
+              <RaisedCircle raised={1800} chainId={chainId}/>
             ) : (
-              <RaisedCircle raised={Math.round(parseFloat(raisedValue.toString()))} />
+              <RaisedCircle raised={Math.round(parseFloat(raisedValue.toString()))} chainId={chainId} />
             )
           ) : (
             <CircularProgressBar
@@ -114,8 +116,8 @@ export const CoinCard = (props: CoinCardProps) => {
         </TokenProgressGraph>
         {!isKingStarter && (
           <CapContainer>
-            <ShowCap isSoft={true} value={softCap ?? 0} />
-            <ShowCap isSoft={false} value={hardCap ?? 0} />
+            <ShowCap isSoft={true} value={softCap ?? 0} chainId={chainId} />
+            <ShowCap isSoft={false} value={hardCap ?? 0} chainId={chainId} />
           </CapContainer>
         )}
       </TokenProgress>
@@ -327,14 +329,13 @@ const CapContainer = styled(Box)(({ theme }) => ({
   gap: '10px'
 }));
 
-const ShowCap = (props: { isSoft: boolean; value: number }) => {
-  const { isSoft, value } = props;
-
+const ShowCap = (props: { isSoft: boolean; value: number ; chainId: number}) => {
+  const { isSoft, value, chainId } = props;
   return (
     <ShowCapContainer>
       <ShowCapText>{isSoft ? 'Soft Cap' : 'Hard Cap'}</ShowCapText>
       <ShowCapValue>{value}</ShowCapValue>
-      <BNBText>BNB</BNBText>
+      <BNBText>{chainId === 1 ? "ETH" : "BNB"}</BNBText>
     </ShowCapContainer>
   );
 };

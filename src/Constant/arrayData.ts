@@ -80,6 +80,7 @@ export const coinCardData = async () => {
     if(kingpass_start > now) {
       coinCard.push({
         id: mainConfig[i].id,
+        chainId: mainConfig[i].chain_id,
         isKingStarter: true,
         coinImg: project.logo,
         coinName: project.name,
@@ -96,6 +97,7 @@ export const coinCardData = async () => {
     } else if (kingpass_start < now && kingpass_end > now) {
        coinCard.push({
         id: mainConfig[i].id,
+        chainId: mainConfig[i].chain_id,
         isKingStarter: true,
         coinImg: project.logo,
         coinName: project.name,
@@ -112,6 +114,7 @@ export const coinCardData = async () => {
     } else if (kingpass_end < now) {
       coinCard.push({
         id: mainConfig[i].id,
+        chainId: mainConfig[i].chain_id,
         isKingStarter: true,
         coinImg: project.logo,
         coinName: project.name,
@@ -130,6 +133,7 @@ export const coinCardData = async () => {
     if(kingpass_end < now && presale_start > now) {
       coinCard.push({
         id: mainConfig[i].id,
+        chainId: mainConfig[i].chain_id,
         isKingStarter: false,
         coinImg: project.logo,
         coinName: project.name,
@@ -146,6 +150,7 @@ export const coinCardData = async () => {
     } else if (presale_start < now && presale_end > now) {
        coinCard.push({
         id: mainConfig[i].id,
+        chainId: mainConfig[i].chain_id,
         isKingStarter: false,
         coinImg: project.logo,
         coinName: project.name,
@@ -162,6 +167,7 @@ export const coinCardData = async () => {
     } else if(presale_end < now) {
        coinCard.push({
         id: mainConfig[i].id,
+        chainId: mainConfig[i].chain_id,
         isKingStarter: false,
         coinImg: project.logo,
         coinName: project.name,
