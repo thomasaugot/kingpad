@@ -87,6 +87,8 @@ export const CoinDetailCards = (props: { data: coinDataProps }) => {
         status={status}
         currency={currency}
         timeStamp={timestamp}
+        softcap={data.soft_cap}
+        hardcap={data.hard_cap}
         addressToken={data.token_address}
       />
       <KingpassholderCard status={status} isKing={hasKing} />

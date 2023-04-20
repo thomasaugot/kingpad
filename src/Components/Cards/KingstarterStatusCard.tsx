@@ -16,9 +16,11 @@ export const KingstarterStatusCard = (props: {
   status: string;
   currency: string;
   timeStamp: number;
+  softcap: number;
+  hardcap: number;
   addressToken: string;
 }) => {
-  const { status, currency, timeStamp, addressToken } = props;
+  const { status, currency, timeStamp, addressToken, softcap, hardcap } = props;
 
   const { isConnected, isInitialized } = useWeb3Store();
   const [raisedValue, setRaisedValue] = useState('0');
@@ -39,27 +41,27 @@ export const KingstarterStatusCard = (props: {
       <CardButtonGroup>
         <KingFilterButton name="kingstarter" />
         <OngoingButton>
-          {status === 'Ongoing' && (
-            <>
-              <Circle sx={{ width: '18px', height: '18px', color: '#00FE9A' }} />
-              On going
-            </>
-          )}
-          {status === 'Upcoming' && (
-            <>
-              <Circle sx={{ width: '18px', height: '18px', color: '#fdac52' }} />
-              Upcoming
-            </>
-          )}
-          {status === 'Ended' && (
-            <>
-              <Circle sx={{ width: '18px', height: '18px', color: '#fc1e42' }} />
-              Ended
-            </>
-          )}
+          <Circle
+            sx={{
+              width: '18px',
+              height: '18px',
+              color: `${status === 'Ongoing' ? '#00FE9A' : status === 'Upcoming' ? '#fdac52' : '#fc1e42'}`
+            }}
+          />
+          {status === 'Ongoing' ? 'On going' : status}
         </OngoingButton>
       </CardButtonGroup>
       <RaisedContainer>
+        {status !== 'Ended' && (
+          <>
+            <RaisedLabel>Soft/Hard</RaisedLabel>
+            <RaisedValue>
+              {softcap}
+              {currency} - {hardcap}
+              {currency}
+            </RaisedValue>
+          </>
+        )}
         <RaisedLabel>Raised</RaisedLabel>
         {addressToken === CradleOfSinSAddress ? (
           <RaisedValue>{`${1800} ${currency}`}</RaisedValue>
@@ -68,17 +70,8 @@ export const KingstarterStatusCard = (props: {
         )}
       </RaisedContainer>
       <EndInContainer>
-        <CardLabel>
-          {status === 'Ongoing' && 'Ends In'}
-          {status === 'Upcoming' && 'Starts in'}
-          {status === 'Ended' && 'Kingstarter ended'}
-        </CardLabel>
-        {status === 'Ended' ? (
-          <Kingsale onClick={() => window.open(`/kingsale-explore?id=${1}`)}>Visit Kingsale</Kingsale>
-        ) : (
-          <CountDown timestamp={timeStamp} />
-        )}{' '}
-        {/* @todo oh no hardcode */}
+        <CardLabel>{status === 'Upcoming' ? 'Starts in' : 'Ends in'}</CardLabel>
+        {status === 'Ended' ? <EndedLabel>Kingsale ended</EndedLabel> : <CountDown timestamp={timeStamp} />}{' '}
       </EndInContainer>
     </CardBox>
   );
@@ -238,6 +231,12 @@ const RaisedContainer = styled(Box)(({ theme }) => ({
 const RaisedLabel = styled(Box)(({ theme }) => ({
   fontSize: '13px',
   color: '#8462F6',
+  fontFamily: 'gotham-bold'
+}));
+
+const EndedLabel = styled(Box)(({ theme }) => ({
+  fontSize: '19px',
+  color: ' #1E0041',
   fontFamily: 'gotham-bold'
 }));
 
