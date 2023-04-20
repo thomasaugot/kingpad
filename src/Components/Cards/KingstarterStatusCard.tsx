@@ -52,16 +52,12 @@ export const KingstarterStatusCard = (props: {
         </OngoingButton>
       </CardButtonGroup>
       <RaisedContainer>
-        {status !== 'Ended' && (
-          <>
-            <RaisedLabel>Soft/Hard</RaisedLabel>
-            <RaisedValue>
-              {softcap}
-              {currency} - {hardcap}
-              {currency}
-            </RaisedValue>
-          </>
-        )}
+        <RaisedLabel>Soft/Hard</RaisedLabel>
+        <RaisedValue>
+          {softcap}
+          {currency} - {hardcap}
+          {currency}
+        </RaisedValue>
         <RaisedLabel>Raised</RaisedLabel>
         {addressToken === CradleOfSinSAddress ? (
           <RaisedValue>{`${1800} ${currency}`}</RaisedValue>
