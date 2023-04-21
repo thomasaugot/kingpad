@@ -53,7 +53,7 @@ export const KingstarterStatusCard = (props: {
       </CardButtonGroup>
       <RaisedContainer>
         <RaisedLabel>Soft/Hard</RaisedLabel>
-        <RaisedValue>
+        <RaisedValue sx={{ paddingBottom: '20px' }}>
           {softcap}
           {currency} - {hardcap}
           {currency}
@@ -232,7 +232,7 @@ const RaisedLabel = styled(Box)(({ theme }) => ({
 
 const EndedLabel = styled(Box)(({ theme }) => ({
   fontSize: '19px',
-  color: ' #1E0041',
+  color: theme.palette.primary.contrastText,
   fontFamily: 'gotham-bold'
 }));
 
@@ -245,8 +245,7 @@ const RaisedValue = styled(Box)(({ theme }) => ({
 const EndInContainer = styled(Box)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
-  alignItems: 'center',
-  gap: '20px'
+  alignItems: 'center'
 }));
 
 const Kingsale = styled(Button)(({ theme }) => ({

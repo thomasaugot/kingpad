@@ -1,29 +1,69 @@
+import { useState, useEffect } from 'react';
 import { Box, Button } from '@mui/material';
 import { styled } from '@mui/system';
 import { MenuKingPass } from 'src/Config/Images';
+import { useWeb3Store } from 'src/Context/Web3Context';
+import { getTotalDeposited } from 'src/Contracts/kingPad';
+import { CircularProgressBar } from '../Progress/CircularProgress';
 
-export const KingpassholderCard = (props: { status: string; isKing: boolean }) => {
-  const { status, isKing } = props;
+export const KingpassholderCard = (props: {
+  status: string;
+  isKing: boolean;
+  hardCap: number;
+  isWhiteListed: boolean;
+}) => {
+  const { hardCap, status, isWhiteListed, isKing } = props;
+  const { isConnected, isInitialized } = useWeb3Store();
+  const [totalContribution, setTotalContribution] = useState(0);
+
+  useEffect(() => {
+    getTotalDepositValue();
+  }, [isConnected, isInitialized]);
+
+  const getTotalDepositValue = async () => {
+    const total = await getTotalDeposited();
+    if (total !== undefined) {
+      setTotalContribution(parseFloat(total));
+    }
+  };
+
   return (
     <KingpassholderCardContainer status={status}>
-      <KingpassLogo src={MenuKingPass} alt="kingpass-logo" />
-      <PrimaryLabel>
-        {!isKing && status === 'Ongoing' && 'Sorry you need a Kingpass'}
-        {isKing && status === 'Ongoing' && 'Congratulations!'}
-        {status === 'Upcoming' && 'This sale will start soon'}
-        {status === 'Ended' && 'This sale has ended'}
-      </PrimaryLabel>
-      <SecondaryLabel>
-        {!isKing && status === 'Ongoing' && 'To be eligible to join this sale you have to be a Kingpass holder'}
-        {isKing && status === 'Ongoing' && 'You are a Kingpass holder and you are eligible to join this sale'}
-        {status === 'Upcoming' && 'Remember that only Kingpass holders can join this sale. Do you have yours?'}
-        {status === 'Ended' && "Don't miss next sales on kingpad and be sure to have a kingpass to join it"}
-      </SecondaryLabel>
-      {!isKing && status === 'Ongoing' && (
-        <Discover onClick={() => window.open('https://kingpass.finance')}>Discover</Discover>
+      {status === 'Ongoing' ? (
+        !isWhiteListed ? (
+          <>
+            <PrimaryLabel>Sorry!</PrimaryLabel>
+            <SecondaryLabel>
+              You are not whitelisted, <br /> wait for the open <br />
+              Kingsale event.
+            </SecondaryLabel>
+          </>
+        ) : !isKing ? (
+          <>
+            <KingpassLogo src={MenuKingPass} alt="kingpass-logo" />
+            <PrimaryLabel>
+              Sorry! You need <br /> a Kingpass to <br /> join this sale
+            </PrimaryLabel>
+            <Discover onClick={() => window.open('https://kingpass.finance')}>Mint now</Discover>
+          </>
+        ) : (
+          <CircularProgressBar percentage={parseFloat(((totalContribution / hardCap) * 100).toFixed(1))} />
+        )
+      ) : status === 'Upcoming' ? (
+        <>
+          <KingpassLogo src={MenuKingPass} alt="kingpass-logo" />
+          <PrimaryLabel>
+            This sale will <br /> Start soon
+          </PrimaryLabel>
+          <SecondaryLabel>
+            Remember that you <br /> need a Kingpass to have a <br /> guaranteed allocation
+          </SecondaryLabel>
+          <Discover onClick={() => window.open('https://kingpass.finance')}>Discover</Discover>
+        </>
+      ) : (
+        <></>
       )}
-      {status === 'Upcoming' && <Discover onClick={() => window.open('https://kingpass.finance')}>Discover</Discover>}
-      {status === 'Ended' && <Discover onClick={() => window.open('https://kingpass.finance')}>Discover</Discover>}
+      {status === 'Ended' && <CircularProgressBar percentage={100} />}
     </KingpassholderCardContainer>
   );
 };
@@ -33,7 +73,7 @@ const KingpassholderCardContainer = styled(Box)<{ status: string }>(({ theme, st
   alignItems: 'center',
   gap: '15px',
   flexDirection: 'column',
-  justifyContent: status !== 'Upcoming' ? 'space-between' : 'normal',
+  justifyContent: 'center',
   padding: '35px',
   width: '100%',
   backgroundColor: theme.palette.primary.main,
@@ -64,7 +104,8 @@ const SecondaryLabel = styled(Box)(({ theme }) => ({
   color: theme.palette.primary.contrastText,
   fontSize: '15px',
   textAlign: 'center',
-  width: '310px',
+  lineHeight: '18px',
+  width: '239px',
   fontFamily: 'gotham-bold',
   [theme.breakpoints.down(370)]: {
     fontSize: '13px',

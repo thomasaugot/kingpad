@@ -7,7 +7,7 @@ import { KingStarterContributeCard } from 'src/Components/Cards/KingStarterContr
 import { coinDataProps } from 'src/Constant/interface';
 import { useAccount } from 'wagmi';
 import { useWeb3Store } from 'src/Context/Web3Context';
-import { getUserPassActive } from 'src/Contracts/kingPad';
+import { getUserInfo, getUserPassActive } from 'src/Contracts/kingPad';
 import { UTCTimePrinter, currentTimeStamp } from 'src/Utils/utcTimePrinter';
 
 export const CoinDetailCards = (props: { data: coinDataProps }) => {
@@ -19,6 +19,7 @@ export const CoinDetailCards = (props: { data: coinDataProps }) => {
   const [hasKing, setHasKing] = useState(false);
   const [currency, setCurrency] = useState('BNB');
   const [timestamp, setTimeStamp] = useState(0);
+  const [isWhiteListed, setIsWhiteListed] = useState(false);
 
   const getUserActive = async () => {
     if (address !== undefined) {
@@ -71,6 +72,13 @@ export const CoinDetailCards = (props: { data: coinDataProps }) => {
     setTimeStamp(_timeStamp);
   };
 
+  const getUserInfos = async () => {
+    if (address !== undefined) {
+      const res = await getUserInfo(address);
+      setIsWhiteListed(res?.isWhitelisted || false);
+    }
+  };
+
   useEffect(() => {
     getTimeStamp();
   }, [status]);
@@ -78,6 +86,7 @@ export const CoinDetailCards = (props: { data: coinDataProps }) => {
   useEffect(() => {
     if (isConnected) {
       getUserActive();
+      getUserInfos();
     }
   }, [isInitialized, isConnected]);
 
@@ -91,7 +100,7 @@ export const CoinDetailCards = (props: { data: coinDataProps }) => {
         hardcap={data.hard_cap}
         addressToken={data.token_address}
       />
-      <KingpassholderCard status={status} isKing={hasKing} />
+      <KingpassholderCard status={status} isKing={hasKing} hardCap={data.hard_cap} isWhiteListed={isWhiteListed} />
       <KingStarterContributeCard
         status={!hasKing ? 'NoKing' : status}
         minBuy={data.kingpass_min_contribution}
