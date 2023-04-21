@@ -58,10 +58,6 @@ a {
   background-color: #060111;
 }
 
-.big-header {
-  font-family: "Gotham bold";
-}
-
 .gradient-text {
   color: transparent;
   -webkit-text-fill-color: transparent;
@@ -73,25 +69,6 @@ a {
   -moz-background-clip: text;
   -ms-background-clip: text;
   -o-background-clip: text;
-}
-.gradient-border {
-  position: relative;
-  background: transparent;
-  border: none;
-  padding: 10px 1px;
-  border-radius: 20px;
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.button-container {
-  display: inline-block;
-  position: relative;
-  border-radius: 50px;
-  overflow: hidden;
-  background: linear-gradient(45deg, #f3ec78, #af4261);
 }
 
 /* Button styles */
@@ -117,6 +94,71 @@ a {
 /* radius for project cards */
 .custom-border-radius {
   border-radius: 20px;
+}
+
+/* Gradient Border */
+
+.border-gradient {
+  background: radial-gradient(circle at 100% 100%, #060111 0, #060111 10px, transparent 10px) 0% 0%/12px
+      12px no-repeat,
+    radial-gradient(circle at 0 100%, #060111 0, #060111 10px, transparent 10px) 100% 0%/12px 12px
+      no-repeat,
+    radial-gradient(circle at 100% 0, #060111 0, #060111 10px, transparent 10px) 0% 100%/12px 12px
+      no-repeat,
+    radial-gradient(circle at 0 0, #060111 0, #060111 10px, transparent 10px) 100% 100%/12px 12px
+      no-repeat,
+    linear-gradient(#060111, #060111) 50% 50% / calc(100% - 4px) calc(100% - 24px) no-repeat,
+    linear-gradient(#060111, #060111) 50% 50% / calc(100% - 24px) calc(100% - 4px) no-repeat,
+    linear-gradient(90deg, #432ad9 0%, #432ad9 9%, #cd9bf4 100%);
+  box-sizing: border-box;
+}
+
+.button-border-gradient {
+  border: none;
+  display: inline-block;
+  border-radius: 99px;
+  color: white;
+  position: relative;
+  z-index: 1;
+  font-size: 14px;
+  padding: 14px 30px;
+}
+
+.button-border-gradient:before,
+.button-border-gradient:after {
+  content: " ";
+  position: absolute;
+  border-radius: 99px;
+}
+
+.button-border-gradient:before {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -2;
+  background: #432ad9;
+  background: -moz-linear-gradient(left, #432ad9 0%, #cd9bf4 100%);
+  background: -webkit-linear-gradient(left, #432ad9 0%, #cd9bf4 100%);
+  background: -o-linear-gradient(left, #432ad9 0%, #cd9bf4 100%);
+  background: -ms-linear-gradient(left, #432ad9 0%, #cd9bf4 100%);
+  background: linear-gradient(to right, #432ad9 0%, #cd9bf4 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#432ad9', endColorstr='#cd9bf4',GradientType=1 );
+}
+
+.button-border-gradient:after {
+  top: 2px;
+  bottom: 2px;
+  left: 2px;
+  right: 2px;
+  background-color: #060111;
+  z-index: -1;
+  opacity: 1;
+  transition: all 0.6s ease-in-out;
+}
+
+.button-border-gradient:hover:after {
+  opacity: 0;
 }
 
 .img_placeholder {

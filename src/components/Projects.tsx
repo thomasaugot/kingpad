@@ -52,14 +52,14 @@ const Projects = ({ projects }: Props) => {
                 </h3>
                 <ProjectSocials />
                 <div className="w-[100%] flex justify-between	mt-[24px]">
-                  <p className="flex flex-col border-2 rounded-xl border-purple-gradient-finish to-432ad9 py-[13px] px-[5px] text-center w-[31%] h-[98px] mx-[1px] relative">
+                  <p className="flex flex-col border-gradient rounded-xl py-[12px] px-[4px] text-center w-[31%] h-[98px] mx-[1px] relative">
                     <span className="text-[130%] font-bold">{project.BNB}</span>
                     <span className="text-xs font-bold">BNB</span>
                     <span className="text-[70%] font-thin flex items-center justify-center lg:text-[10px]">
                       Total Raise
                     </span>
                   </p>
-                  <p className="flex flex-col border-2 rounded-xl border-purple-gradient-finish to-432ad9 py-[13px] px-[5px] text-center w-[31%] max-h-[98px] mx-[1px] relative">
+                  <p className="flex flex-col border-gradient rounded-xl py-[13px] px-[5px] text-center w-[31%] h-[98px] mx-[1px] relative">
                     <span className="text-[130%] font-bold leading-2">4</span>
                     <span className="text-xs font-bold lg:text-[10px]">BNB</span>
                     <span className="text-[70%] font-thin lg:text-[10px]">Max contr.</span>

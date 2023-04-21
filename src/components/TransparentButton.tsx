@@ -4,12 +4,12 @@ const TransparentButton = ({ callback, children }: PropsWithChildren<{ callback?
   return (
     <>
       <button
-        className={`rounded-full px-6 pt-[14px] pb-[14px] items-center flex   text-white z-[1] border-[2px] border-purple-gradient-finish  mx-auto sm:mx-0 bh-button`}
+        className={`button-border-gradient items-center flex z-[1]  mx-auto sm:mx-0`}
         onClick={() => {
           if (callback) callback();
         }}
       >
-        {children}
+        <span> {children}</span>
       </button>
     </>
   );

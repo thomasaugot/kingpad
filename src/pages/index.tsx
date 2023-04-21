@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import ApplySection from "@/components/ApplySection";
 import Header from "@/components/Header";
 import CryptoLogos from "@/components/CryptoLogos";
+import CryptoSaleSection from "@/components/CryptoSaleSection";
 
 export default function Home() {
   return (
@@ -17,15 +18,16 @@ export default function Home() {
       </Head>
       <Navbar />
       <Header />
-      <ApplySection />
-      <CryptoLogos />
       <Image
-        className="absolute z-[-1]"
+        className="absolute z-[-1] h-[6000px] top-[-600px]"
         alt="glow"
         src="/img/glow.png"
         width="5800"
         height="9800"
       />
+      <ApplySection />
+      <CryptoLogos />
+      <CryptoSaleSection projects={[]} />
       <Projects projects={[]} />
     </>
   );
