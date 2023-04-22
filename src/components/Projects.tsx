@@ -7,6 +7,7 @@ interface Project {
   projectName: string;
   BNB: string;
   status: string;
+  image: string;
 }
 
 interface Props {
@@ -18,6 +19,7 @@ const Projects = ({ projects }: Props) => {
     projectName: "",
     BNB: "",
     status: "",
+    image: "",
   });
 
   const [projectList, setProjectList] = useState<Project[]>([
@@ -25,11 +27,13 @@ const Projects = ({ projects }: Props) => {
       projectName: "Project Name",
       BNB: "1800",
       status: "UPCOMING",
+      image: "/img/placeholder-colored.png",
     },
     {
       projectName: "Project Name",
       BNB: "1800",
       status: "UPCOMING",
+      image: "/img/placeholder2.png",
     },
   ]);
 
@@ -42,7 +46,12 @@ const Projects = ({ projects }: Props) => {
               key={index}
               className="rounded-2xl max-w-[348px] h-[512px] lg:basis-[32%] gradient-effect-parent lg:max-w-[33%]"
             >
-              <div className="relative img_placeholder scroll-target w-[100%] h-[168px] rounded-t-2xl bg-center bg-no-repeat bg-cover">
+              <div
+                className="relative scroll-target w-[100%] h-[168px] rounded-t-2xl bg-center bg-no-repeat bg-cover"
+                style={{
+                  backgroundImage: `url(${project.image})`,
+                }}
+              >
                 <div className="gradient-effect-child absolute w-full h-full rounded-t-2xl "></div>
               </div>
               <div className="flex flex-col px-7 py-6 text-left	 rounded-b-2xl bg-kp-dark">
