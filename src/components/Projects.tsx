@@ -115,7 +115,7 @@ const Projects = ({ projects }: Props) => {
             />
             <div className="flex flex-col justify-center align-middle pt-12 pb-10 sm:ml-[310px] sm:mt-[-20px] lg:m-0 ">
               <p className="text-[22px] text-center font-[1000] mb-3	w-[75%] mx-auto sm:w-[250px] lg:mb-5 lg:w-[60%] lg:mt-[-45px] ">
-                Discover all launches on KP
+                Discover all launches on Kingpad
               </p>
               <div className="mx-auto">
                 <PurpleButton>Explore all</PurpleButton>

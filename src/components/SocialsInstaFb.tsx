@@ -8,8 +8,8 @@ const SocialsInstaFb = () => {
       <ReactSVG src="/img/Telegram.svg" className="media-icon mt-0 mr-[-1px]" />
       <ReactSVG src="/img/Youtube.svg" className="media-icon mt-0 mr-[-1px]" />
       <ReactSVG src="/img/Discord.svg" className="media-icon mt-0 mr-[-1px]" />
-      <ReactSVG src="/img/Facebook.svg" className="media-icon mt-0 mr-[-1px]" />
-      <ReactSVG src="/img/Instagram.svg" className="media-icon mt-0 mr-[-1px]" />
+      <ReactSVG src="/img/Facebook.svg" className="media-icon mt-0 ml-[-6px]" />
+      <ReactSVG src="/img/Instagram.svg" className="media-icon mt-0 ml-[-7px]" />
     </div>
   );
 };
