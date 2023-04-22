@@ -71,24 +71,26 @@ a {
   -o-background-clip: text;
 }
 
-/* Button styles */
-.gradient-button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  display: inline-block;
+/* hover effect on navbar links */
+
+.nav-link {
+  color: white;
   position: relative;
-  padding: 12px 24px;
-  font-size: 16px;
-  border-radius: 50px;
-  outline: none;
-  color: inherit;
-  transition: background-color 0.2s ease-in-out;
+  transition: letter-spacing 0.2s ease-in-out;
 }
 
-.gradient-button:hover {
-  background: white;
-  color: black;
+.nav-link:hover {
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  background: -webkit-linear-gradient(left, #cd9bf4, #432ad9);
+  background: linear-gradient(to right, #cd9bf4, #432ad9);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -ms-background-clip: text;
+  -o-background-clip: text;
+  transform: scale(1.1);
+  font-weight: 900;
 }
 
 /* radius for project cards */
@@ -96,7 +98,7 @@ a {
   border-radius: 20px;
 }
 
-/* Gradient Border */
+/* Gradient Border (not for buttons, this starts at line 96) */
 
 .border-gradient {
   background: radial-gradient(circle at 100% 100%, #060111 0, #060111 10px, transparent 10px) 0% 0%/12px
@@ -113,6 +115,10 @@ a {
   box-sizing: border-box;
 }
 
+/* Buttons styles */
+
+/* Transparent backround and gradient border buttons */
+
 .button-border-gradient {
   border: none;
   display: inline-block;
@@ -121,7 +127,7 @@ a {
   position: relative;
   z-index: 1;
   font-size: 14px;
-  padding: 14px 30px;
+  padding: 16px 25px;
 }
 
 .button-border-gradient:before,
@@ -159,6 +165,28 @@ a {
 
 .button-border-gradient:hover:after {
   opacity: 0;
+}
+
+/* Purple background button */
+
+.purple-gradient-button {
+  background: white;
+  background-image: linear-gradient(to right, #cd9bf4 0%, #432ad9 100%);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  transition: all 0.6s ease-in-out;
+}
+
+.purple-gradient-button:hover {
+  background: white;
+}
+
+.purple-gradient-button span {
+  color: white;
+}
+
+.purple-gradient-button span:hover {
+  color: black;
 }
 
 .img_placeholder {

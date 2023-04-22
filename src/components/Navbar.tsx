@@ -21,10 +21,18 @@ const Navbar = () => {
           />
           <div className="hidden  lg:flex  items-center justify-center whitespace-nowrap  text-[14px] font-medium text-white lg:ml-4 lg:text-[12px] ">
             <div className="hidden items-center text-[14px] [&>a]:pr-2 font-medium text-white [&>a]:text-[16px] [&>a]:pt-4 lg:ml-8 lg:flex lg:space-x-[80px] xl:ml-20 ">
-              <Link href="/">Services</Link>
-              <Link href="/">About</Link>
-              <Link href="/">Kingpass</Link>
-              <Link href="/">$KING</Link>
+              <Link href="/" className="nav-link hover:font-black">
+                Services
+              </Link>
+              <Link href="/" className="nav-link hover:font-black">
+                About
+              </Link>
+              <Link href="/" className="nav-link hover:font-black">
+                Kingpass
+              </Link>
+              <Link href="/" className="nav-link hover:font-black">
+                $KING
+              </Link>
             </div>
           </div>
         </div>
