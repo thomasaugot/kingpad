@@ -181,12 +181,12 @@ a {
   background: white;
 }
 
-.purple-gradient-button span {
-  color: white;
+.purple-gradient-button:hover span {
+  color: black;
 }
 
-.purple-gradient-button span:hover {
-  color: black;
+.purple-gradient-button span {
+  color: white;
 }
 
 /* filter effect will only be applied on non-touch screens */

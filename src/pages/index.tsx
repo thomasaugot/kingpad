@@ -6,6 +6,7 @@ import ApplySection from "@/components/ApplySection";
 import Header from "@/components/Header";
 import CryptoLogos from "@/components/CryptoLogos";
 import CryptoSaleSection from "@/components/CryptoSaleSection";
+import MintPassSection from "@/components/MintPassSection";
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
       <ApplySection />
       <CryptoLogos />
       <CryptoSaleSection projects={[]} />
+      <MintPassSection />
       <Projects projects={[]} />
     </>
   );

@@ -3,7 +3,7 @@ import Socials from "./Socials";
 
 const Header = () => {
   return (
-    <header className="ax-w-[1120px] pb-[130px] flex flex-col lg:pl-[240px] py-[50px] space-x-1  lg:flex-row relative items-center [&_*]:text-white w-full">
+    <header className="max-w-[1420px] mx-auto pb-[130px] flex flex-col lg:pl-[240px] py-[50px] space-x-1  lg:flex-row relative items-center [&_*]:text-white w-full">
       <div className="flex w-[70vw]">
         <div className="flex flex-col">
           <h1 className="tracking-[1px] text-white text-[55px] mb-2 font-extrabold lg:text-left">
