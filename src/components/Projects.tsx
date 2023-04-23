@@ -87,7 +87,7 @@ const Projects = ({ projects }: Props) => {
                 <div className="flex items-center mt-[10px]	">
                   <h4 className="mb-[-7px]">
                     <span className="text-kp-purple text-[11px] font-bold tracking-wide	my-[22px] w-2/3 leading-3	">
-                      START DATE&nbsp;&nbsp;&nbsp;&nbsp;
+                      Starts in&nbsp;&nbsp;&nbsp;&nbsp;
                     </span>
                     <span className="text-[12px] font-hairline tracking-wide ">TBA</span>
                   </h4>

@@ -17,7 +17,9 @@ const Header = () => {
           <p className="text-center lg:text-left text-[16px]">
             Kingpad is your place to be if you are looking to <br /> invest in the future.
           </p>
-          <Socials />
+          <div className="mt-8">
+            <Socials />
+          </div>
         </div>
       </div>
 

@@ -7,6 +7,7 @@ import Header from "@/components/Header";
 import CryptoLogos from "@/components/CryptoLogos";
 import CryptoSaleSection from "@/components/CryptoSaleSection";
 import MintPassSection from "@/components/MintPassSection";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
       <CryptoSaleSection projects={[]} />
       <MintPassSection />
       <Projects projects={[]} />
+      <Footer />
     </>
   );
 }

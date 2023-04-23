@@ -39,11 +39,11 @@ const CryptoSaleSection = ({ projects }: Props) => {
   ]);
 
   return (
-    <>
+    <div className="gradient-effect-parent">
       {projectList?.map((project, index) => (
         <div key={index} className="flex bg-kp-dark max-w-[1120px] rounded-2xl m-[auto]">
           <div
-            className="basis-1/2 rounded-l-2xl relative gradient-effect-parent"
+            className="basis-1/2 rounded-l-2xl relative "
             style={{
               backgroundImage: `url(${project.image})`,
               backgroundSize: "cover",
@@ -99,7 +99,7 @@ const CryptoSaleSection = ({ projects }: Props) => {
           />
         </div>
       ))}
-    </>
+    </div>
   );
 };
 

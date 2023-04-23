@@ -1,13 +1,24 @@
+import Link from "next/link";
 import { ReactSVG } from "react-svg";
 
 const Socials = () => {
   return (
-    <div className="w-[260px]  [&_svg]:w-[30px] [&_svg]:h-8 flex mt-8 justify-between">
-      <ReactSVG src="/img/Twitter.svg" />
-      <ReactSVG src="/img/Telegram.svg" />
-      <ReactSVG src="/img/Youtube.svg" />
-      <ReactSVG src="/img/Medium.svg" />
-      <ReactSVG src="/img/Discord.svg" />
+    <div className="w-[260px] [&_svg]:w-[30px] [&_svg]:h-8 flex justify-between">
+      <Link href={""}>
+        <ReactSVG src="/img/Twitter.svg" className="social-links" />
+      </Link>
+      <Link href={""}>
+        <ReactSVG src="/img/Telegram.svg" className="social-links" />
+      </Link>
+      <Link href={""}>
+        <ReactSVG src="/img/Youtube.svg" className="social-links" />
+      </Link>
+      <Link href={""}>
+        <ReactSVG src="/img/Medium.svg" className="social-links" />
+      </Link>
+      <Link href={""}>
+        <ReactSVG src="/img/Discord.svg" className="social-links" />
+      </Link>
     </div>
   );
 };

@@ -58,6 +58,10 @@ a {
   background-color: #060111;
 }
 
+.text-kp-purple {
+  color: #8462f6;
+}
+
 .gradient-text {
   color: transparent;
   -webkit-text-fill-color: transparent;
@@ -89,8 +93,12 @@ a {
   -moz-background-clip: text;
   -ms-background-clip: text;
   -o-background-clip: text;
-  transform: scale(1.1);
+  transform: scaleX(1.1);
   font-weight: 900;
+}
+
+.social-links:hover path {
+  fill: white;
 }
 
 /* radius for project cards */
