@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import Projects from "../components/Projects";
 import Navbar from "@/components/Navbar";
 import ApplySection from "@/components/ApplySection";
@@ -18,21 +17,16 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="../../public/favicon.ico" />
       </Head>
-      <Navbar />
-      <Header />
-      <Image
-        className="absolute z-[-1] h-[6000px] top-[-600px]"
-        alt="glow"
-        src="/img/glow.png"
-        width="5800"
-        height="9800"
-      />
-      <ApplySection />
-      <CryptoLogos />
-      <CryptoSaleSection projects={[]} />
-      <MintPassSection />
-      <Projects projects={[]} />
-      <Footer />
+      <div className="background-glow">
+        <Navbar />
+        <Header />
+        <ApplySection />
+        <CryptoLogos />
+        <CryptoSaleSection projects={[]} />
+        <MintPassSection />
+        <Projects projects={[]} />
+        <Footer />
+      </div>
     </>
   );
 }

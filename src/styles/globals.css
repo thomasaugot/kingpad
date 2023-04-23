@@ -75,6 +75,13 @@ a {
   -o-background-clip: text;
 }
 
+.background-glow {
+  background-image: url("../../public/img/glow.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
 /* hover effect on navbar links */
 
 .nav-link {

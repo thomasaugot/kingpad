@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="max-w-[1120px] flex flex-col mx-auto space-y-[65px]">
+    <div className="max-w-[1120px] flex flex-col mx-auto space-y-[65px] py-12">
       <div className="flex ">
         <div className="flex flex-col space-y-10 grow">
           <Image alt="Kingpad Logo" src="/img/Kingpad-logo2.png" width="43" height="43" />
