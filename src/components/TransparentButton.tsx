@@ -30,8 +30,8 @@ const TransparentButton = ({ children, onClick }: PropsWithChildren<ButtonProps>
         </button>
       </div>
       <Image
-        className={`absolute z-10 pointer-events-none bottom-0 transition-all ease-in-out duration-300 ${
-          isHovered ? "translate-y-1/3" : "translate-y-2/3 opacity-0"
+        className={`absolute z-10 pointer-events-none -bottom-3 transition-all ease-in-out duration-300 ${
+          isHovered ? "translate-y-1/3 pt-8" : "translate-y-2/3 opacity-0"
         }`}
         src="/img/pointer_hand.png"
         alt="pointer"

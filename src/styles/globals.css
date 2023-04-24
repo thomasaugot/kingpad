@@ -75,6 +75,40 @@ a {
   -o-background-clip: text;
 }
 
+/* Kingstarter/Kingsale phases cards gradient, incl. smooth transitioning */
+
+.background-gradient-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 200px;
+  background-image: linear-gradient(180deg, rgba(67, 42, 217, 1) 0%, rgba(132, 98, 246, 1) 79%);
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.background-gradient-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(205, 155, 244, 1) 79%);
+  z-index: -1;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.background-gradient-card:hover::before {
+  opacity: 1;
+}
+
+.background-gradient-card:hover h6,
+.background-gradient-card:hover h3,
+.background-gradient-card:hover p {
+  color: #060111;
+}
+
 .background-glow {
   background-image: url("../../public/img/glow.png");
   background-repeat: no-repeat;
@@ -87,7 +121,7 @@ a {
 .nav-link {
   color: white;
   position: relative;
-  transition: letter-spacing 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .nav-link:hover {
@@ -113,7 +147,7 @@ a {
   border-radius: 20px;
 }
 
-/* Gradient Border (not for buttons, this starts at line 96) */
+/* Gradient Border (not for buttons) */
 
 .border-gradient {
   background: radial-gradient(circle at 100% 100%, #060111 0, #060111 10px, transparent 10px) 0% 0%/12px
@@ -211,9 +245,9 @@ a {
   }
   .gradient-effect-child {
     background-color: #432ad9;
-    opacity: 50%;
+    opacity: 60%;
     transition: 0.5s;
-    filter: contrast(2);
+    filter: contrast(9);
     border-radius: inherit;
   }
   .gradient-effect-parent:hover .gradient-effect-child {

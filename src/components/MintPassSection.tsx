@@ -1,7 +1,7 @@
 import Image from "next/image";
 import TransparentButton from "./TransparentButton";
 
-const MintPassSection: React.FC = () => {
+const MintPassSection = () => {
   return (
     <div className="flex align-middle bg-kp-dark max-w-[1120px] h-[191px] rounded-2xl my-14 mx-auto">
       <div className="basis-1/4 my-auto">
@@ -23,8 +23,12 @@ const MintPassSection: React.FC = () => {
           are looking for.
         </p>
       </div>
-      <div className="basis-1/4 my-auto">
-        <TransparentButton>Mint Now</TransparentButton>
+      <div className="basis-1/4 my-auto flex justify-center">
+        <div className="group inline-block">
+          <TransparentButton>
+            <span className="group-hover:bg-opacity-80">Mint Now</span>
+          </TransparentButton>
+        </div>
       </div>
     </div>
   );
