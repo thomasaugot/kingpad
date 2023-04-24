@@ -22,7 +22,6 @@ const Header: React.FC = () => {
           </div>
         </div>
       </div>
-
       <div className="absolute right-[170px] top-[40px] ">
         <Image
           alt="rocket ship"

@@ -75,6 +75,16 @@ a {
   -o-background-clip: text;
 }
 
+/* gradient menu background */
+
+.menu-background-gradient {
+  background: rgb(132, 98, 246);
+  background: -moz-linear-gradient(180deg, rgba(132, 98, 246, 1) 0%, rgba(67, 42, 217, 1) 79%);
+  background: -webkit-linear-gradient(180deg, rgba(132, 98, 246, 1) 0%, rgba(67, 42, 217, 1) 79%);
+  background: linear-gradient(180deg, rgba(132, 98, 246, 1) 0%, rgba(67, 42, 217, 1) 79%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8462f6",endColorstr="#432ad9",GradientType=1);
+}
+
 /* Kingstarter/Kingsale phases cards gradient, incl. smooth transitioning */
 
 .background-gradient-card {
