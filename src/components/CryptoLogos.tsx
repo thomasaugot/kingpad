@@ -1,6 +1,6 @@
 import { ReactSVG } from "react-svg";
 
-const CryptoLogos = () => {
+const CryptoLogos: React.FC = () => {
   return (
     <div className="max-w-[600px] [&_svg]:w-[30px] [&_svg]:h-8 flex my-[80px] justify-between mx-auto">
       <ReactSVG src="/img/Group_17.svg" />
@@ -13,4 +13,5 @@ const CryptoLogos = () => {
     </div>
   );
 };
+
 export default CryptoLogos;

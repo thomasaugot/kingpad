@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ReactSVG } from "react-svg";
 
-const SocialsInstaFb = () => {
+const SocialsInstaFb: React.FC = () => {
   return (
     <div className="w-[50%] [&_svg]:w-[30px] [&_svg]:h-7 flex mt-6 align-middle justify-stretch">
       <Link href={""} className="social-links">

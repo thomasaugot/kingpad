@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Socials from "./Socials";
 
-const Header = () => {
+const Header: React.FC = () => {
   return (
     <header className="max-w-[1420px] mx-auto pb-[130px] flex flex-col lg:pl-[240px] py-[50px] space-x-1  lg:flex-row relative items-center [&_*]:text-white w-full">
       <div className="flex w-[70vw]">

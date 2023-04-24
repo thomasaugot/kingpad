@@ -1,6 +1,6 @@
 import TransparentButton from "./TransparentButton";
 
-function ApplySection() {
+function ApplySection(): JSX.Element {
   return (
     <div className="flex flex-col md:flex-row justify-between bg-kp-dark p-[50px] pr-[60px] max-w-[1120px] rounded-2xl m-[auto]">
       <div className="order-1 md:order-none flex items-center">

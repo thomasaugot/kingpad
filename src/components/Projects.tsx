@@ -6,6 +6,7 @@ import PurpleButton from "./PurpleButton";
 interface Project {
   projectName: string;
   BNB: string;
+  startDate: string;
   status: string;
   image: string;
 }
@@ -18,6 +19,7 @@ const Projects = ({ projects }: Props) => {
   const [projectData, setProjectData] = useState<Project>({
     projectName: "",
     BNB: "",
+    startDate: "",
     status: "",
     image: "",
   });
@@ -26,12 +28,14 @@ const Projects = ({ projects }: Props) => {
     {
       projectName: "Project Name",
       BNB: "1800",
+      startDate: "20 | 14 | 34 | 12",
       status: "UPCOMING",
       image: "/img/placeholder-colored.png",
     },
     {
       projectName: "Project Name",
       BNB: "1800",
+      startDate: "TBA",
       status: "UPCOMING",
       image: "/img/placeholder2.png",
     },
@@ -89,7 +93,9 @@ const Projects = ({ projects }: Props) => {
                     <span className="text-kp-purple text-[14px] font-bold tracking-wide	my-[22px] w-2/3 leading-3	">
                       Starts in&nbsp;&nbsp;&nbsp;&nbsp;
                     </span>
-                    <span className="text-[12px] font-hairline tracking-wide ">TBA</span>
+                    <span className="text-[13px] font-hairline tracking-wide ">
+                      {project.startDate}
+                    </span>
                   </h4>
                   <div className="text-left mt-[10px] ml-auto">
                     <PurpleButton>Explore</PurpleButton>

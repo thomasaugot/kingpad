@@ -1,7 +1,7 @@
 import Image from "next/image";
 import TransparentButton from "./TransparentButton";
 
-const MintPassSection = () => {
+const MintPassSection: React.FC = () => {
   return (
     <div className="flex align-middle bg-kp-dark max-w-[1120px] h-[191px] rounded-2xl my-14 mx-auto">
       <div className="basis-1/4 my-auto">

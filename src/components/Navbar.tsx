@@ -3,9 +3,9 @@ import { ReactSVG } from "react-svg";
 import PurpleButton from "./PurpleButton";
 import { useState } from "react";
 
-const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const toggleMenu = () => setMenuOpen((prev) => !prev);
+const Navbar = (): JSX.Element => {
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const toggleMenu = (): void => setMenuOpen((prev) => !prev);
 
   return (
     <nav className=" z-50 w-full">

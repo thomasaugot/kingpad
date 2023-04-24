@@ -2,12 +2,12 @@ import Image from "next/image";
 import Socials from "./Socials";
 import Link from "next/link";
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <div className="max-w-[1120px] flex flex-col mx-auto space-y-[65px] py-12">
       <div className="flex ">
         <div className="flex flex-col space-y-10 grow">
-          <Image alt="Kingpad Logo" src="/img/Kingpad-logo2.png" width="43" height="43" />
+          <Image alt="Kingpad Logo" src="/img/Kingpad-logo2.png" width={43} height={43} />
           <p className="text-[13px] max-w-[249px]">
             Launching the future through De-Fi with safety and security.
           </p>
@@ -59,4 +59,5 @@ const Footer = () => {
     </div>
   );
 };
+
 export default Footer;
