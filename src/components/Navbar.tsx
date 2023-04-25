@@ -9,8 +9,6 @@ const Navbar = (): JSX.Element => {
   const [subMenuOpen, setSubMenuOpen] = useState(false);
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  const toggleMenu = () => setMenuOpen((prev) => !prev);
-
   // for the submenu
 
   const clearCloseTimeout = () => {
@@ -28,8 +26,18 @@ const Navbar = (): JSX.Element => {
       closeTimeoutRef.current = setTimeout(() => {
         setSubMenuOpen(false);
         closeTimeoutRef.current = null;
-      }, 900);
+      }, 600);
     }
+  };
+
+  // if user opens submenu but then doesn't hover over it:
+
+  const closeSubMenu = () => {
+    if (!subMenuOpen) {
+      return;
+    }
+    clearCloseTimeout();
+    setSubMenuOpen(false);
   };
 
   return (
@@ -46,7 +54,16 @@ const Navbar = (): JSX.Element => {
           />
           <div className="hidden lg:flex items-center justify-center whitespace-nowrap text-[14px] text-white lg:ml-4 lg:text-[12px] ">
             <div className="hidden items-center text-[14px] [&>a]:pr-2 text-white [&>a]:text-[16px] [&>a]:pt-4 lg:ml-8 lg:flex lg:space-x-[80px] xl:ml-20 ">
-              <Link onClick={toggleSubMenu} className="nav-link" href={""}>
+              <Link
+                onClick={toggleSubMenu}
+                className="nav-link"
+                href={""}
+                onMouseLeave={() => {
+                  closeTimeoutRef.current = setTimeout(() => {
+                    closeSubMenu();
+                  }, 900);
+                }}
+              >
                 <div
                   className="nav-link"
                   onMouseEnter={() => {
@@ -65,7 +82,7 @@ const Navbar = (): JSX.Element => {
                     setSubMenuOpen(true);
                   }}
                   onMouseLeave={() => {
-                    setSubMenuOpen(false);
+                    closeSubMenu();
                   }}
                 >
                   <Link href="/" className="text-kp-dark font-bold text-[15px] submenu-navlink">
