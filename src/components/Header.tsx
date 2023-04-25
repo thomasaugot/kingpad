@@ -4,25 +4,27 @@ import Socials from "./Socials";
 const Header: React.FC = () => {
   return (
     <header className="max-w-[1420px] mx-auto pb-[130px] flex flex-col lg:pl-[240px] py-[50px] space-x-1  lg:flex-row relative items-center [&_*]:text-white w-full">
-      <div className="flex w-[70vw]">
-        <div className="flex flex-col">
-          <h1 className="tracking-[1px] text-white text-[55px] mb-2 font-extrabold lg:text-left">
+      <div className="flex w-[80vw] lg:w-[70vw]">
+        <div className="flex flex-col justify-center">
+          <h1 className="tracking-[1px] w-[100%] text-center lg:text-left mx-auto -mt-10 lg:mt-0 text-white lg:w-[534px] text-[35px] lg:text-[55px] mb-2 font-extrabold whitespace-normal lg:whitespace-nowrap">
             A Safe place <br />
-            to join the&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <span className=" gradient-text absolute top-[133px] left-[545px] text-[55px]">
-              best
+            to join the
+            <span className="gradient-text inline-block lg:inline-block tracking-[1px] text-[37px] lg:text-[57px] whitespace-nowrap">
+              &nbsp;best
             </span>
-            .
+            <span className="text-white inline-block text-[35px] lg:text-[55px] mb-2 font-extrabold whitespace-nowrap">
+              .
+            </span>
           </h1>
-          <p className="text-center lg:text-left text-[16px]">
-            Kingpad is your place to be if you are looking to <br /> invest in the future.
+          <p className="text-center lg:w-[388px] lg:text-left text-[16px]">
+            Kingpad is your place to be if you are looking to invest in the future.
           </p>
-          <div className="mt-8">
+          <div className="mt-8 flex justify-center lg:justify-start items-center mb-[220px] lg:mb-0">
             <Socials />
           </div>
         </div>
       </div>
-      <div className="absolute right-[170px] top-[40px] ">
+      <div className="absolute right-[10px] top-[390px] lg:right-[170px] lg:top-[40px] ">
         <Image
           alt="rocket ship"
           className="relative"
@@ -31,7 +33,7 @@ const Header: React.FC = () => {
           height="305"
         />
         <Image
-          className="absolute max-w-[1400px]  z-[-1]  right-[-450px]
+          className="absolute max-w-[1400px] z-[-1] right-[-550px] lg:right-[-450px]
               top-[-440px]"
           alt="glow"
           src="/img/glow.png"

@@ -166,11 +166,11 @@ a {
   transform: translateX(-50%);
   width: 220px;
   z-index: 50;
+  transition: all 0.9s ease;
 }
 
 .submenu-open {
   display: block;
-  animation: slide-down 1s ease forwards;
 }
 
 @keyframes slide-down {
@@ -179,6 +179,24 @@ a {
   }
   to {
     top: 0;
+  }
+}
+
+@keyframes slide-down {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 0;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    top: 0;
+  }
+  to {
+    top: -100%;
   }
 }
 

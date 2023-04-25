@@ -11,9 +11,6 @@ const MobileMenu = (): JSX.Element => {
   const [subMenuOpen, setSubMenuOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen((prev) => !prev);
-
-  // for the submenu
-
   const toggleSubMenu = () => setSubMenuOpen((prev) => !prev);
 
   return (
@@ -52,7 +49,7 @@ const MobileMenu = (): JSX.Element => {
                     </button>
                   </div>
 
-                  <div className="flex flex-col justify-center align-middle mx-auto my-24 space-y-7">
+                  <div className="flex flex-col justify-center align-middle mx-auto my-10 space-y-7">
                     <div className="flex items-center relative" onClick={toggleSubMenu}>
                       <button className="text-[25px] flex">
                         Services{" "}
@@ -78,8 +75,9 @@ const MobileMenu = (): JSX.Element => {
                             >
                               <span>
                                 <ReactSVG
-                                  className="inline-flex w-5 h-5"
+                                  className="inline-flex w-3 h-3"
                                   src="/img/Launchpad-icon.svg"
+                                  style={{ stroke: "white" }}
                                 />
                               </span>{" "}
                               Launchpad
@@ -92,10 +90,11 @@ const MobileMenu = (): JSX.Element => {
                                 <ReactSVG
                                   className="inline-flex w-3 h-3"
                                   src="/img/Kinglock-icon.svg"
+                                  style={{ stroke: "white" }}
                                 />
                               </span>{" "}
                               King Lock{" "}
-                              <span className="inline-flex text-white text-[8px] font-bold bg-kp-purple p-1 mb-1 rounded-2xl">
+                              <span className="inline-flex absolute text-white text-[9px] font-bold bg-kp-purple py-1 px-2 mt-[6px] ml-2 rounded-2xl">
                                 SOON
                               </span>
                             </Link>
@@ -107,6 +106,7 @@ const MobileMenu = (): JSX.Element => {
                                 <ReactSVG
                                   className="inline-flex w-3 h-3"
                                   src="/img/Audit-icon.svg"
+                                  style={{ stroke: "white" }}
                                 />
                               </span>{" "}
                               Audit
@@ -116,7 +116,11 @@ const MobileMenu = (): JSX.Element => {
                               className="text-kp-dark font-bold text-[20px] submenu-navlink block py-2 px-4"
                             >
                               <span>
-                                <ReactSVG className="inline-flex w-3 h-3" src="/img/KYC-icon.svg" />
+                                <ReactSVG
+                                  className="inline-flex w-3 h-3"
+                                  src="/img/KYC-icon.svg"
+                                  style={{ stroke: "white" }}
+                                />
                               </span>{" "}
                               KYC
                             </Link>
@@ -124,7 +128,7 @@ const MobileMenu = (): JSX.Element => {
                         </div>
                       )}
                     </div>
-                    <div className={`flex flex-col space-y-7 ${subMenuOpen ? "pt-40" : ""}`}>
+                    <div className={`flex flex-col space-y-7 ${subMenuOpen ? "pt-[180px]" : ""}`}>
                       <Link href="/" className="text-[25px] font-bold">
                         About
                       </Link>
