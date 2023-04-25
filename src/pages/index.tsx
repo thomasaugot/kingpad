@@ -1,6 +1,8 @@
 import Head from "next/head";
+import { useMediaQuery } from "@material-ui/core";
+import DesktopNavbar from "@/components/Navbar";
+import MobileMenu from "@/components/MobileMenu";
 import Projects from "../components/Projects";
-import Navbar from "@/components/Navbar";
 import ApplySection from "@/components/ApplySection";
 import Header from "@/components/Header";
 import CryptoLogos from "@/components/CryptoLogos";
@@ -10,6 +12,8 @@ import Footer from "@/components/Footer";
 import KingPhaseCard from "@/components/KingPhaseCard";
 
 export default function Home() {
+  const isDesktop = useMediaQuery("(min-width:960px)");
+
   return (
     <>
       <Head>
@@ -19,7 +23,7 @@ export default function Home() {
         <link rel="icon" href="../../public/favicon.ico" />
       </Head>
       <div className="background-glow">
-        <Navbar />
+        {isDesktop ? <DesktopNavbar /> : <MobileMenu />}
         <Header />
         <ApplySection />
         <CryptoLogos />

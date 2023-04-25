@@ -1,18 +1,36 @@
 import Link from "next/link";
 import { ReactSVG } from "react-svg";
 import PurpleButton from "./PurpleButton";
-import { useState } from "react";
-import "react-icons/bs";
+import { useState, useRef } from "react";
 import { BsChevronCompactDown } from "react-icons/bs";
-import { VscChromeClose } from "react-icons/vsc";
-import { IconContext } from "react-icons";
 
 const Navbar = (): JSX.Element => {
-  const [menuOpen, setMenuOpen] = useState<boolean>(false);
-  const [subMenuOpen, setSubMenuOpen] = useState<boolean>(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [subMenuOpen, setSubMenuOpen] = useState(false);
+  const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  const toggleMenu = (): void => setMenuOpen((prev) => !prev);
-  const toggleSubMenu = (): void => setSubMenuOpen((prev) => !prev);
+  const toggleMenu = () => setMenuOpen((prev) => !prev);
+
+  // for the submenu
+
+  const clearCloseTimeout = () => {
+    if (closeTimeoutRef.current !== null) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+  };
+
+  const toggleSubMenu = () => {
+    setSubMenuOpen((prev) => !prev);
+    if (!subMenuOpen) {
+      clearCloseTimeout();
+    } else {
+      closeTimeoutRef.current = setTimeout(() => {
+        setSubMenuOpen(false);
+        closeTimeoutRef.current = null;
+      }, 900);
+    }
+  };
 
   return (
     <nav className="z-50 w-full">
@@ -26,29 +44,55 @@ const Navbar = (): JSX.Element => {
             }}
             src="/img/kingpad_logo.svg"
           />
-          <div className="hidden lg:flex items-center justify-center whitespace-nowrap text-[14px] font-medium text-white lg:ml-4 lg:text-[12px] ">
-            <div className="hidden items-center text-[14px] [&>a]:pr-2 font-medium text-white [&>a]:text-[16px] [&>a]:pt-4 lg:ml-8 lg:flex lg:space-x-[80px] xl:ml-20 ">
-              <Link
-                onClick={toggleSubMenu}
-                className="nav-link hover:font-black block pb-2"
-                href={""}
-              >
-                <div className="flex">
+          <div className="hidden lg:flex items-center justify-center whitespace-nowrap text-[14px] text-white lg:ml-4 lg:text-[12px] ">
+            <div className="hidden items-center text-[14px] [&>a]:pr-2 text-white [&>a]:text-[16px] [&>a]:pt-4 lg:ml-8 lg:flex lg:space-x-[80px] xl:ml-20 ">
+              <Link onClick={toggleSubMenu} className="nav-link" href={""}>
+                <div
+                  className="nav-link"
+                  onMouseEnter={() => {
+                    clearCloseTimeout();
+                    setSubMenuOpen(true);
+                  }}
+                >
                   Services <BsChevronCompactDown className="chevron-icon lg:hidden" />
                 </div>
               </Link>
               {subMenuOpen && (
-                <div className="absolute top-full left-0 w-full bg-white py-4 px-8 shadow-lg">
-                  <Link href="/" className="nav-link hover:font-black block pb-2">
+                <div
+                  className="absolute top-[120px] z-50 left-[170px] w-[236px] h-[195px] rounded-2xl bg-white text-kp-dark p-8 flex flex-col space-y-3 shadow-lg"
+                  onMouseEnter={() => {
+                    clearCloseTimeout();
+                    setSubMenuOpen(true);
+                  }}
+                  onMouseLeave={() => {
+                    setSubMenuOpen(false);
+                  }}
+                >
+                  <Link href="/" className="text-kp-dark font-bold text-[15px] submenu-navlink">
+                    <span>
+                      <ReactSVG className="inline-flex w-3 h-3" src="/img/Launchpad-icon.svg" />
+                    </span>{" "}
                     Launchpad
                   </Link>
-                  <Link href="/" className="nav-link hover:font-black block pb-2">
-                    King Lock
+                  <Link href="/" className="text-kp-dark font-bold text-[15px] submenu-navlink">
+                    <span>
+                      <ReactSVG className="inline-flex w-3 h-3" src="/img/Kinglock-icon.svg" />
+                    </span>{" "}
+                    King Lock{" "}
+                    <span className="inline-flex text-white text-[8px] font-bold bg-kp-purple p-1 mb-1 rounded-2xl">
+                      SOON
+                    </span>
                   </Link>
-                  <Link href="/" className="nav-link hover:font-black block pb-2">
+                  <Link href="/" className="text-kp-dark font-bold text-[15px] submenu-navlink">
+                    <span>
+                      <ReactSVG className="inline-flex w-3 h-3" src="/img/Audit-icon.svg" />
+                    </span>{" "}
                     Audit
                   </Link>
-                  <Link href="/" className="nav-link hover:font-black block">
+                  <Link href="/" className="text-kp-dark font-bold text-[15px] submenu-navlink">
+                    <span>
+                      <ReactSVG className="inline-flex w-3 h-3" src="/img/KYC-icon.svg" />
+                    </span>{" "}
                     KYC
                   </Link>
                 </div>
@@ -67,61 +111,6 @@ const Navbar = (): JSX.Element => {
           </div>
         </div>
         <PurpleButton>Connect</PurpleButton>
-
-        <button
-          className="inline-flex items-center justify-center text-black lg:hidden"
-          onClick={toggleMenu}
-        >
-          <ReactSVG src="/img/Menu-burger.svg" />
-        </button>
-        {menuOpen && (
-          <div className="fixed inset-0 menu-background-gradient z-50 flex flex-col">
-            <div className="absolute top-0 left-0 mt-4 ml-4">
-              <ReactSVG src="/img/Logo-menu.svg" className="m-5" />
-            </div>
-            <div className="absolute top-0 right-0 mt-4 mr-4">
-              <button className="text-white hover:text-gray-300" onClick={toggleMenu}>
-                <IconContext.Provider
-                  value={{
-                    style: {
-                      margin: "20px",
-                      width: "25px",
-                      height: "25px",
-                      color: "red",
-                    },
-                  }}
-                >
-                  <VscChromeClose />
-                </IconContext.Provider>
-              </button>
-            </div>
-            <div className="flex flex-col justify-center align-middle mx-auto my-24 space-y-5">
-              <div className="flex items-center">
-                <Link href="">
-                  <div className="flex ">
-                    Services{" "}
-                    <IconContext.Provider
-                      value={{
-                        style: {
-                          paddingTop: "5px",
-                          marginLeft: "10px",
-                          width: "20px",
-                          height: "20px",
-                        },
-                      }}
-                    >
-                      <BsChevronCompactDown />
-                    </IconContext.Provider>
-                  </div>
-                </Link>
-              </div>
-
-              <Link href="/">About</Link>
-              <Link href="/">Kingpass</Link>
-              <Link href="/">$KING</Link>
-            </div>
-          </div>
-        )}
       </div>
     </nav>
   );

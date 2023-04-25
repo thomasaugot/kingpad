@@ -58,8 +58,16 @@ a {
   background-color: #060111;
 }
 
+.text-kp-dark {
+  color: #060111;
+}
+
 .text-kp-purple {
   color: #8462f6;
+}
+
+.bg-kp-purple {
+  background-color: #8462f6;
 }
 
 .gradient-text {
@@ -132,6 +140,7 @@ a {
   color: white;
   position: relative;
   transition: all 0.3s ease-in-out;
+  font-weight: normal !important;
 }
 
 .nav-link:hover {
@@ -146,6 +155,31 @@ a {
   -o-background-clip: text;
   transform: scaleX(1.1);
   font-weight: 900;
+}
+
+.submenu-navlink:hover {
+  color: #432ad9;
+}
+
+.submenu {
+  position: absolute;
+  transform: translateX(-50%);
+  width: 220px;
+  z-index: 50;
+}
+
+.submenu-open {
+  display: block;
+  animation: slide-down 1s ease forwards;
+}
+
+@keyframes slide-down {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 0;
+  }
 }
 
 .social-links:hover path {
