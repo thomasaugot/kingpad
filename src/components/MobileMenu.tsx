@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { ReactSVG } from "react-svg";
 import { useState } from "react";
-import { BsChevronCompactDown } from "react-icons/bs";
 import { VscChromeClose } from "react-icons/vsc";
 import { IconContext } from "react-icons";
 import PurpleButton from "./PurpleButton";
@@ -25,11 +24,11 @@ const MobileMenu = (): JSX.Element => {
           />
           <div>
             <div>
-              <button className="[&_svg]:w-[29px] [&_svg]:h-[29px]" onClick={toggleMenu}>
+              <button className="[&_svg]:w-[30px] [&_svg]:h-[30px]" onClick={toggleMenu}>
                 <ReactSVG src="/img/Menu-burger.svg" />
               </button>
               {menuOpen && (
-                <div className="fixed inset-0 menu-background-gradient z-50 flex flex-col text-left">
+                <div className="fixed inset-0 menu-background-gradient z-50 flex flex-col">
                   <div className="flex justify-between p-8">
                     <div className="[&_svg]:w-[29px] [&_svg]:h-[29px]">
                       <ReactSVG src="/img/Logo-menu.svg" />
@@ -47,108 +46,107 @@ const MobileMenu = (): JSX.Element => {
                       </IconContext.Provider>
                     </button>
                   </div>
-                  <div className="flex flex-col justify-center align-middle mx-auto my-10 space-y-7">
-                    <Accordion
-                      sx={{
-                        backgroundColor: "transparent",
-                        boxShadow: "none",
-                        border: "none",
-                        margin: "auto",
-                      }}
-                    >
-                      <AccordionSummary
+                  <div className="flex flex-col ml-[34%]">
+                    <div className="flex flex-col justify-center my-10 space-y-7">
+                      <Accordion
                         sx={{
                           backgroundColor: "transparent",
                           boxShadow: "none",
                           border: "none",
-                          fontSize: "25px",
+                          margin: "0",
                         }}
                       >
-                        Services{" "}
-                        <IconContext.Provider
-                          value={{
-                            style: {
-                              paddingTop: "5px",
-                              marginLeft: "10px",
-                              width: "35px",
-                              height: "35px",
-                            },
+                        <AccordionSummary
+                          sx={{
+                            backgroundColor: "transparent",
+                            boxShadow: "none",
+                            border: "none",
+                            fontSize: "25px",
+                            margin: "0",
+                            padding: "0",
+                            // fontWeight: "100 !important", NOT WORKING
                           }}
                         >
-                          <BsChevronCompactDown />
-                        </IconContext.Provider>
-                      </AccordionSummary>
-                      <AccordionDetails
-                        style={{ display: "flex", flexDirection: "column", marginTop: "-16px" }}
-                      >
-                        <Link
-                          href="/"
-                          className="text-kp-dark font-bold text-[20px] submenu-navlink block py-2 px-4"
+                          Services{" "}
+                          <ReactSVG
+                            src="/img/arrow-down.svg"
+                            className="inline-flex w-3 h-3 pt-4 ml-5"
+                          />
+                        </AccordionSummary>
+                        <AccordionDetails
+                          style={{ display: "flex", flexDirection: "column", marginTop: "-16px" }}
                         >
-                          <span>
-                            <ReactSVG
-                              className="inline-flex w-3 h-3"
-                              src="/img/Launchpad-icon.svg"
-                              style={{ stroke: "white" }}
-                            />
-                          </span>{" "}
-                          Launchpad
-                        </Link>
-                        <Link
-                          href="/"
-                          className="text-kp-dark font-bold text-[20px] submenu-navlink block py-2 px-4"
-                        >
-                          <span>
-                            <ReactSVG
-                              className="inline-flex w-3 h-3"
-                              src="/img/Kinglock-icon.svg"
-                              style={{ stroke: "white" }}
-                            />
-                          </span>{" "}
-                          King Lock{" "}
-                          <span className="inline-flex absolute text-white text-[9px] font-bold bg-kp-purple py-1 px-2 mt-[6px] ml-2 rounded-2xl">
-                            SOON
-                          </span>
-                        </Link>
-                        <Link
-                          href="/"
-                          className="text-kp-dark font-bold text-[20px] submenu-navlink block py-2 px-4"
-                        >
-                          <span>
-                            <ReactSVG
-                              className="inline-flex w-3 h-3"
-                              src="/img/Audit-icon.svg"
-                              style={{ stroke: "white" }}
-                            />
-                          </span>{" "}
-                          Audit
-                        </Link>
-                        <Link
-                          href="/"
-                          className="text-kp-dark font-bold text-[20px] submenu-navlink block py-2 px-4"
-                        >
-                          <span>
-                            <ReactSVG
-                              className="inline-flex w-3 h-3"
-                              src="/img/KYC-icon.svg"
-                              style={{ stroke: "white" }}
-                            />
-                          </span>{" "}
-                          KYC
-                        </Link>
-                      </AccordionDetails>
-                    </Accordion>
-                  </div>
-                  <div className="flex flex-col space-y-7 -mt-7 ml-[125px]">
-                    <Link href="/" className="text-[25px] font-bold">
-                      About
-                    </Link>
-                    <Link href="/" className="text-[25px] font-bold">
-                      Kingpass
-                    </Link>
-                    <Link href="/" className="text-[25px] font-bold">
-                      $KING
-                    </Link>
+                          <Link
+                            href="/"
+                            className="text-kp-dark font-bold text-[20px] submenu-navlink block py-2 px-4"
+                          >
+                            <span>
+                              <ReactSVG
+                                className="inline-flex w-3 h-3"
+                                src="/img/Launchpad-icon.svg"
+                                style={{ stroke: "white" }}
+                              />
+                            </span>{" "}
+                            Launchpad
+                          </Link>
+                          <Link
+                            href="/"
+                            className="text-kp-dark font-bold text-[20px] submenu-navlink block py-2 px-4 relative"
+                          >
+                            <span>
+                              <ReactSVG
+                                className="inline-flex w-3 h-3"
+                                src="/img/Kinglock-icon.svg"
+                                style={{ stroke: "white" }}
+                              />
+                            </span>{" "}
+                            King Lock{" "}
+                            <span className="inline-flex absolute text-white text-[9px] font-bold bg-kp-purple py-1 px-2 mt-[6px] ml-2 rounded-2xl">
+                              SOON
+                            </span>
+                            <span className="absolute top-0 right-0 h-full w-full bg-kp-purple opacity-0 transition-opacity hidden"></span>
+                          </Link>
+
+                          <Link
+                            href="/"
+                            className="text-kp-dark font-bold text-[20px] submenu-navlink block py-2 px-4"
+                          >
+                            <span>
+                              <ReactSVG
+                                className="inline-flex w-3 h-3"
+                                src="/img/Audit-icon.svg"
+                                style={{ stroke: "white" }}
+                              />
+                            </span>{" "}
+                            Audit
+                          </Link>
+                          <Link
+                            href="/"
+                            className="text-kp-dark font-bold text-[20px] submenu-navlink block py-2 px-4"
+                          >
+                            <span>
+                              <ReactSVG
+                                className="inline-flex w-3 h-3"
+                                src="/img/KYC-icon.svg"
+                                style={{ stroke: "white" }}
+                              />
+                            </span>{" "}
+                            KYC
+                          </Link>
+                        </AccordionDetails>
+                      </Accordion>
+                    </div>
+                    <div className="flex flex-col space-y-7 -mt-7">
+                      <Link href="/" className="text-[25px] font-bold">
+                        About
+                      </Link>
+                      <Link href="/" className="text-[25px] font-bold">
+                        Kingpass
+                      </Link>
+                      <Link href="/" className="text-[25px] font-bold">
+                        $KING
+                      </Link>
+                    </div>
                   </div>
                 </div>
               )}

@@ -47,7 +47,7 @@ const Projects = ({ projects }: Props) => {
 
   return (
     <div className="gradient-effect-parent content-center flex flex-wrap items-center align-middle justify-center lg:mx-auto my-6 w-full">
-      <div className="flex flex-wrap lg:justify-between lg:w-[1120px] -space-y-5">
+      <div className="flex flex-wrap lg:justify-between lg:w-[1120px] -space-y-5 lg:space-y-0">
         {projectList?.map((project, index) => (
           <div
             key={index}
@@ -113,7 +113,7 @@ const Projects = ({ projects }: Props) => {
             />
           </div>
         ))}
-        <div className="relative rounded-2xl m-auto max-w-[348px] basis-[100%] md:mt-1 bg-kp-dark lg:h-[487px] lg:flex-col lg:m-0">
+        <div className="relative rounded-2xl m-auto max-w-[348px] basis-[100%] md:mt-1 bg-kp-dark lg:h-[483px] lg:flex-col lg:m-0">
           <Image
             alt="rocket ship"
             src="/img/rocket-up.png"
