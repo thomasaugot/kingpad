@@ -56,12 +56,12 @@ const KingPhaseCard = ({ phases }: Props) => {
   return (
     <div className="max-w-[1120px] flex flex-col mx-auto pb-24">
       <h3 className="text-[30px] mx-auto my-8">How to participate?</h3>
-      <div className="flex w-full space-x-6">
+      <div className="flex flex-col lg:flex-row w-full space-y-[140px] lg:space-y-0 lg:space-x-6">
         {KingPhaseCardsList.map((phase) => {
           return (
             <div
               key={phase.number}
-              className="flex basis-1/2 background-gradient-card rounded-2xl p-10 space-y-3 relative"
+              className="flex flex-col lg:flex-row max-h-[485px] lg:h-[410px] w-[348px] m-auto lg:m-0 lg:basis-1/2 background-gradient-card rounded-2xl p-10 space-y-3 rocket-container"
             >
               <div className="flex flex-col space-y-4">
                 <h6 className="text-base font-hairline">{phase.number}</h6>
@@ -69,21 +69,23 @@ const KingPhaseCard = ({ phases }: Props) => {
                   <ReactSVG src={phase.logo} className="" />
                   <h3 className="text-[30px] ">{phase.title}</h3>
                 </div>
-                <p className="w-[201px] text-[13px]">{phase.description}</p>
-                <p className="w-[201px] text-[13px]">{phase.footer}</p>
+                <p className="w-[289px] lg:w-[201px] text-[13px]">{phase.description}</p>
+                <p className="w-[289px] lg:w-[201px] text-[13px] lg:pb-0">{phase.footer}</p>
               </div>
               <Image
                 alt="rocket ship"
                 src={phase.image}
                 width="269"
                 height="346"
-                className="absolute top-0 right-5"
+                className="block lg:absolute lg:top-0 lg:right-5 z-50"
               />
             </div>
           );
         })}
       </div>
-      <h3 className="text-[30px] mx-auto mt-24 mb-8">Stay updated on new launches</h3>
+      <h3 className="text-[30px] text-center mx-auto mt-[200px] lg:mt-24 mb-8">
+        Stay updated on new launches
+      </h3>
       <div className="inline-block w-auto relative">
         <div className="flex justify-center">
           <div className="inline-block w-auto relative hover:-translate-y-2 transform transition-all duration-300">

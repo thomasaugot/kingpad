@@ -58,21 +58,17 @@ const Navbar = (): JSX.Element => {
                 onClick={toggleSubMenu}
                 className="nav-link"
                 href={""}
+                onMouseEnter={() => {
+                  clearCloseTimeout();
+                  setSubMenuOpen(true);
+                }}
                 onMouseLeave={() => {
                   closeTimeoutRef.current = setTimeout(() => {
                     closeSubMenu();
                   }, 900);
                 }}
               >
-                <div
-                  className="nav-link"
-                  onMouseEnter={() => {
-                    clearCloseTimeout();
-                    setSubMenuOpen(true);
-                  }}
-                >
-                  Services <BsChevronCompactDown className="chevron-icon lg:hidden" />
-                </div>
+                Services <BsChevronCompactDown className="chevron-icon lg:hidden" />
               </Link>
               {subMenuOpen && (
                 <div

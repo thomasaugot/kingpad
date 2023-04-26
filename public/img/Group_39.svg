@@ -1,16 +1,16 @@
-<svg width="20" height="32" viewBox="0 0 20 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="20" height="33" viewBox="0 0 20 33" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g opacity="0.6">
-<path d="M9.97189 0.0596313V11.8583L19.9484 16.3132L9.97189 0.0596313Z" fill="white" fill-opacity="0.6"/>
+<path d="M9.97189 0.540771V12.3395L19.9484 16.7943L9.97189 0.540771Z" fill="white" fill-opacity="0.6"/>
 </g>
-<path d="M9.97646 0.0595398L0 16.3176L9.97646 11.8628V0.0595398Z" fill="white" fill-opacity="0.6"/>
+<path d="M9.97646 0.540649L0 16.7987L9.97646 12.3439V0.540649Z" fill="white" fill-opacity="0.6"/>
 <g opacity="0.6">
-<path d="M9.97189 23.9637V31.9806L19.9484 18.172L9.97189 23.9637Z" fill="white" fill-opacity="0.6"/>
+<path d="M9.97189 24.4448V32.4617L19.9484 18.6531L9.97189 24.4448Z" fill="white" fill-opacity="0.6"/>
 </g>
-<path d="M9.97647 31.9806V23.9637L1.52588e-05 18.1765L9.97647 31.9852V31.9806Z" fill="white" fill-opacity="0.6"/>
+<path d="M9.97647 32.4618V24.4449L1.52588e-05 18.6577L9.97647 32.4663V32.4618Z" fill="white" fill-opacity="0.6"/>
 <g opacity="0.2">
-<path d="M9.97189 22.1094L19.9484 16.3177L9.97189 11.8629V22.1094Z" fill="white" fill-opacity="0.6"/>
+<path d="M9.97189 22.5906L19.9484 16.7988L9.97189 12.344V22.5906Z" fill="white" fill-opacity="0.6"/>
 </g>
 <g opacity="0.6">
-<path d="M1.52588e-05 16.3177L9.97647 22.1094V11.8629L1.52588e-05 16.3177Z" fill="white" fill-opacity="0.6"/>
+<path d="M1.52588e-05 16.7988L9.97647 22.5906V12.344L1.52588e-05 16.7988Z" fill="white" fill-opacity="0.6"/>
 </g>
 </svg>

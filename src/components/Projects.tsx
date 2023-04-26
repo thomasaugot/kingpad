@@ -9,6 +9,7 @@ interface Project {
   startDate: string;
   status: string;
   image: string;
+  icon: string;
 }
 
 interface Props {
@@ -22,6 +23,7 @@ const Projects = ({ projects }: Props) => {
     startDate: "",
     status: "",
     image: "",
+    icon: "",
   });
 
   const [projectList, setProjectList] = useState<Project[]>([
@@ -31,6 +33,7 @@ const Projects = ({ projects }: Props) => {
       startDate: "20 | 14 | 34 | 12",
       status: "UPCOMING",
       image: "/img/placeholder-colored.png",
+      icon: "/img/Group_39.svg",
     },
     {
       projectName: "Project Name",
@@ -38,17 +41,18 @@ const Projects = ({ projects }: Props) => {
       startDate: "TBA",
       status: "UPCOMING",
       image: "/img/placeholder2.png",
+      icon: "/img/Group_17.svg",
     },
   ]);
 
   return (
     <>
-      <div className="gradient-effect-parent content-center flex flex-wrap items-center align-middle	justify-center my-10">
-        <div className="flex flex-wrap justify-between mb-1 mx-0 w-[1120px] ">
+      <div className="gradient-effect-parent content-center flex flex-wrap items-center align-middle justify-center lg:mx-auto my-6 w-full lg:w-[1120px]">
+        <div className="flex flex-wrap lg:justify-between lg:w-[1120px]">
           {projectList?.map((project, index) => (
             <div
               key={index}
-              className="rounded-2xl max-w-[348px] h-[512px] lg:basis-[32%] gradient-effect-parent lg:max-w-[33%]"
+              className="rounded-2xl w-[348px] h-[512px] gradient-effect-parent mx-auto lg:mx-0"
             >
               <div
                 className="relative scroll-target w-[100%] h-[168px] rounded-t-2xl bg-center bg-no-repeat bg-cover"
@@ -104,14 +108,14 @@ const Projects = ({ projects }: Props) => {
               </div>
               <Image
                 alt="icon"
-                src="/img/Group_39.png"
-                width="27"
-                height="69"
+                src={project.icon}
+                width="25"
+                height="19"
                 className="relative top-[-290px] left-[80%] z-10 "
               />
             </div>
           ))}
-          <div className="relative rounded-2xl m-auto max-w-[348px] basis-[100%] sm:max-w-[100%] md:mt-1 bg-kp-dark lg:max-w-[33%] lg:h-[483px] lg:flex-col lg:m-0">
+          <div className="relative rounded-2xl m-auto max-w-[348px] basis-[100%] md:mt-1 bg-kp-dark lg:h-[487px] lg:flex-col lg:m-0">
             <Image
               alt="rocket ship"
               src="/img/rocket-up.png"
@@ -119,7 +123,7 @@ const Projects = ({ projects }: Props) => {
               height="372"
               className="absolute drop-shadow hidden sm:block rotate-90 w-[120px] top-[-50px] left-[100px] lg:rotate-0 lg:relative lg:top-[-20px]	lg:left-[33%]"
             />
-            <div className="flex flex-col justify-center align-middle pt-12 pb-10 sm:ml-[310px] sm:mt-[-20px] lg:m-0 ">
+            <div className="flex flex-col justify-center align-middle pt-12 pb-10 lg:m-0 ">
               <p className="text-[22px] text-center font-[1000] mb-3	w-[75%] mx-auto sm:w-[250px] lg:mb-5 lg:w-[60%] lg:mt-[-45px] ">
                 Discover all launches on Kingpad
               </p>
