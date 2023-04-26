@@ -5,13 +5,12 @@ import { BsChevronCompactDown } from "react-icons/bs";
 import { VscChromeClose } from "react-icons/vsc";
 import { IconContext } from "react-icons";
 import PurpleButton from "./PurpleButton";
+import { Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
 
 const MobileMenu = (): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [subMenuOpen, setSubMenuOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen((prev) => !prev);
-  const toggleSubMenu = () => setSubMenuOpen((prev) => !prev);
 
   return (
     <nav className="z-50 w-full p-8 flex">
@@ -30,7 +29,7 @@ const MobileMenu = (): JSX.Element => {
                 <ReactSVG src="/img/Menu-burger.svg" />
               </button>
               {menuOpen && (
-                <div className="fixed inset-0 menu-background-gradient z-50 flex flex-col">
+                <div className="fixed inset-0 menu-background-gradient z-50 flex flex-col text-left">
                   <div className="flex justify-between p-8">
                     <div className="[&_svg]:w-[29px] [&_svg]:h-[29px]">
                       <ReactSVG src="/img/Logo-menu.svg" />
@@ -48,10 +47,23 @@ const MobileMenu = (): JSX.Element => {
                       </IconContext.Provider>
                     </button>
                   </div>
-
                   <div className="flex flex-col justify-center align-middle mx-auto my-10 space-y-7">
-                    <div className="flex items-center relative" onClick={toggleSubMenu}>
-                      <button className="text-[25px] flex">
+                    <Accordion
+                      sx={{
+                        backgroundColor: "transparent",
+                        boxShadow: "none",
+                        border: "none",
+                        margin: "auto",
+                      }}
+                    >
+                      <AccordionSummary
+                        sx={{
+                          backgroundColor: "transparent",
+                          boxShadow: "none",
+                          border: "none",
+                          fontSize: "25px",
+                        }}
+                      >
                         Services{" "}
                         <IconContext.Provider
                           value={{
@@ -65,80 +77,78 @@ const MobileMenu = (): JSX.Element => {
                         >
                           <BsChevronCompactDown />
                         </IconContext.Provider>
-                      </button>
-                      {subMenuOpen && (
-                        <div className="absolute top-full right-8">
-                          <div className={subMenuOpen ? "submenu submenu-open" : "submenu"}>
-                            <Link
-                              href="/"
-                              className="text-kp-dark font-bold text-[20px] submenu-navlink block py-2 px-4"
-                            >
-                              <span>
-                                <ReactSVG
-                                  className="inline-flex w-3 h-3"
-                                  src="/img/Launchpad-icon.svg"
-                                  style={{ stroke: "white" }}
-                                />
-                              </span>{" "}
-                              Launchpad
-                            </Link>
-                            <Link
-                              href="/"
-                              className="text-kp-dark font-bold text-[20px] submenu-navlink block py-2 px-4"
-                            >
-                              <span>
-                                <ReactSVG
-                                  className="inline-flex w-3 h-3"
-                                  src="/img/Kinglock-icon.svg"
-                                  style={{ stroke: "white" }}
-                                />
-                              </span>{" "}
-                              King Lock{" "}
-                              <span className="inline-flex absolute text-white text-[9px] font-bold bg-kp-purple py-1 px-2 mt-[6px] ml-2 rounded-2xl">
-                                SOON
-                              </span>
-                            </Link>
-                            <Link
-                              href="/"
-                              className="text-kp-dark font-bold text-[20px] submenu-navlink block py-2 px-4"
-                            >
-                              <span>
-                                <ReactSVG
-                                  className="inline-flex w-3 h-3"
-                                  src="/img/Audit-icon.svg"
-                                  style={{ stroke: "white" }}
-                                />
-                              </span>{" "}
-                              Audit
-                            </Link>
-                            <Link
-                              href="/"
-                              className="text-kp-dark font-bold text-[20px] submenu-navlink block py-2 px-4"
-                            >
-                              <span>
-                                <ReactSVG
-                                  className="inline-flex w-3 h-3"
-                                  src="/img/KYC-icon.svg"
-                                  style={{ stroke: "white" }}
-                                />
-                              </span>{" "}
-                              KYC
-                            </Link>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                    <div className={`flex flex-col space-y-7 ${subMenuOpen ? "pt-[180px]" : ""}`}>
-                      <Link href="/" className="text-[25px] font-bold">
-                        About
-                      </Link>
-                      <Link href="/" className="text-[25px] font-bold">
-                        Kingpass
-                      </Link>
-                      <Link href="/" className="text-[25px] font-bold">
-                        $KING
-                      </Link>
-                    </div>
+                      </AccordionSummary>
+                      <AccordionDetails
+                        style={{ display: "flex", flexDirection: "column", marginTop: "-16px" }}
+                      >
+                        <Link
+                          href="/"
+                          className="text-kp-dark font-bold text-[20px] submenu-navlink block py-2 px-4"
+                        >
+                          <span>
+                            <ReactSVG
+                              className="inline-flex w-3 h-3"
+                              src="/img/Launchpad-icon.svg"
+                              style={{ stroke: "white" }}
+                            />
+                          </span>{" "}
+                          Launchpad
+                        </Link>
+                        <Link
+                          href="/"
+                          className="text-kp-dark font-bold text-[20px] submenu-navlink block py-2 px-4"
+                        >
+                          <span>
+                            <ReactSVG
+                              className="inline-flex w-3 h-3"
+                              src="/img/Kinglock-icon.svg"
+                              style={{ stroke: "white" }}
+                            />
+                          </span>{" "}
+                          King Lock{" "}
+                          <span className="inline-flex absolute text-white text-[9px] font-bold bg-kp-purple py-1 px-2 mt-[6px] ml-2 rounded-2xl">
+                            SOON
+                          </span>
+                        </Link>
+                        <Link
+                          href="/"
+                          className="text-kp-dark font-bold text-[20px] submenu-navlink block py-2 px-4"
+                        >
+                          <span>
+                            <ReactSVG
+                              className="inline-flex w-3 h-3"
+                              src="/img/Audit-icon.svg"
+                              style={{ stroke: "white" }}
+                            />
+                          </span>{" "}
+                          Audit
+                        </Link>
+                        <Link
+                          href="/"
+                          className="text-kp-dark font-bold text-[20px] submenu-navlink block py-2 px-4"
+                        >
+                          <span>
+                            <ReactSVG
+                              className="inline-flex w-3 h-3"
+                              src="/img/KYC-icon.svg"
+                              style={{ stroke: "white" }}
+                            />
+                          </span>{" "}
+                          KYC
+                        </Link>
+                      </AccordionDetails>
+                    </Accordion>
+                  </div>
+                  <div className="flex flex-col space-y-7 -mt-7 ml-[125px]">
+                    <Link href="/" className="text-[25px] font-bold">
+                      About
+                    </Link>
+                    <Link href="/" className="text-[25px] font-bold">
+                      Kingpass
+                    </Link>
+                    <Link href="/" className="text-[25px] font-bold">
+                      $KING
+                    </Link>
                   </div>
                 </div>
               )}

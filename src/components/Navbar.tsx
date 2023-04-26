@@ -65,7 +65,7 @@ const Navbar = (): JSX.Element => {
                 onMouseLeave={() => {
                   closeTimeoutRef.current = setTimeout(() => {
                     closeSubMenu();
-                  }, 900);
+                  }, 100);
                 }}
               >
                 Services <BsChevronCompactDown className="chevron-icon lg:hidden" />

@@ -56,7 +56,7 @@ const KingPhaseCard = ({ phases }: Props) => {
   return (
     <div className="max-w-[1120px] flex flex-col mx-auto pb-24">
       <h3 className="text-[30px] mx-auto my-8">How to participate?</h3>
-      <div className="flex flex-col lg:flex-row w-full space-y-[140px] lg:space-y-0 lg:space-x-6">
+      <div className="flex flex-col lg:flex-row w-full space-y-6 lg:space-y-0 lg:space-x-6">
         {KingPhaseCardsList.map((phase) => {
           return (
             <div
@@ -66,25 +66,29 @@ const KingPhaseCard = ({ phases }: Props) => {
               <div className="flex flex-col space-y-4">
                 <h6 className="text-base font-hairline">{phase.number}</h6>
                 <div className="flex space-x-3">
-                  <ReactSVG src={phase.logo} className="" />
-                  <h3 className="text-[30px] ">{phase.title}</h3>
+                  <ReactSVG src={phase.logo} />
+                  <h3 className="text-[22px] lg:text-[30px] ">{phase.title}</h3>
                 </div>
-                <p className="w-[289px] lg:w-[201px] text-[13px]">{phase.description}</p>
-                <p className="w-[289px] lg:w-[201px] text-[13px] lg:pb-0">{phase.footer}</p>
+                <p className="w-[168px] lg:w-[201px] text-[12px] lg:text-[13px]">
+                  {phase.description}
+                </p>
+                <p className="w-[168px] lg:w-[201px] text-[12px] lg:text-[13px] lg:pb-0">
+                  {phase.footer}
+                </p>
               </div>
               <Image
                 alt="rocket ship"
                 src={phase.image}
                 width="269"
                 height="346"
-                className="block lg:absolute lg:top-0 lg:right-5 z-50"
+                className="absolute w-[200px] lg:w-[269px] top-[50px] right-[-60px] lg:top-0 lg:right-5 z-50"
               />
             </div>
           );
         })}
       </div>
-      <h3 className="text-[30px] text-center mx-auto mt-[200px] lg:mt-24 mb-8">
-        Stay updated on new launches
+      <h3 className="text-[24px] lg:text-[30px] text-center mx-auto mt-[100px] lg:mt-24 mb-8">
+        Stay updated <br className="lg:hidden" /> on new launches
       </h3>
       <div className="inline-block w-auto relative">
         <div className="flex justify-center">
