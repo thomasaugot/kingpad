@@ -2,7 +2,7 @@ import { ReactSVG } from "react-svg";
 
 const CryptoLogos: React.FC = () => {
   return (
-    <div className="[&_svg]:w-[30px] [&_svg]:h-8 max-w-[348px] lg:max-w-[500px] lg:space-x-12 flex flex-col space-y-8 lg:space-y-0 lg:flex-row lg:flex-nowrap my-[50px] lg:my-[80px] mx-auto justify-center items-center">
+    <div className="[&_svg]:w-[30px] [&_svg]:h-8 max-w-[348px] md:max-w-[500px] md:space-x-12 flex flex-col space-y-8 md:space-y-0 lg:space-y-0 md:flex-row md:flex-nowrap my-[50px] lg:my-[80px] mx-auto justify-center items-center">
       <div className="flex space-x-12">
         <ReactSVG src="/img/Group_17.svg" />
         <ReactSVG src="/img/Group_39.svg" />

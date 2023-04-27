@@ -1,8 +1,8 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import PurpleButton from "./PurpleButton";
-import SocialsInstaFb from "./ProjectSocials";
 import { useMediaQuery } from "@material-ui/core";
+import ProjectSocials from "./ProjectSocials";
 
 interface Project {
   image: string;
@@ -56,10 +56,10 @@ const CryptoSaleSection = ({ projects }: Props) => {
       {projectList?.map((project, index) => (
         <div
           key={index}
-          className="flex flex-col lg:flex-row bg-kp-dark max-w-[348px] lg:h-[378px] lg:max-w-[1120px] rounded-2xl m-[auto]"
+          className="flex flex-col lg:flex-row bg-kp-dark max-w-[348px] md:max-w-[680px] lg:h-[378px] lg:max-w-[1120px] rounded-2xl m-[auto]"
         >
           <div
-            className="lg:basis-[50%] rounded-t-2xl lg:rounded-none lg:rounded-l-2xl relative h-[339px] lg:h-[378px]"
+            className="rounded-t-2xl lg:rounded-none lg:rounded-l-2xl relative lg:w-[50%]  h-[339px] md:h-[271px] lg:h-[378px]"
             style={{
               backgroundImage: `url(${isMobile ? project.imageMobile : project.image})`,
               backgroundSize: "cover",
@@ -68,29 +68,33 @@ const CryptoSaleSection = ({ projects }: Props) => {
           >
             <div className="gradient-effect-child lg:absolute w-full lg:h-full rounded-t-2xl"></div>
           </div>
-          <div className="lg:basis-[50%] flex h-[339px] px-7 lg:px-10 lg:pr-0 py-7 lg:py-12 ">
-            <div className="flex flex-col space-y-2 lg:space-y-4 text-left	w-full rounded-b-2xl bg-kp-dark">
-              <h4 className="text-[10px] font-hairline text-left">
-                {isMobile ? project.actionTwo : project.action}
-              </h4>
-              <h3 className="text-[22px] font-medium text-left tracking-wide">
-                {project.projectName}
-              </h3>
-              <SocialsInstaFb />
-              <p className=" text-[12px] lg:text-[13px]">{project.description}</p>
-              <div className="flex pt-3 basis-3/4 flex-grow space-x-8">
-                <div className="w-[100%] flex justify-between space-x-5">
-                  <p className="flex flex-col items-center justify-center border-gradient rounded-xl p-2 text-center w-[106px] h-[85px] lg:h-[98px] mx-[1px] relative">
+          <div className="flex h-[339px] md:h-[271px] p-7 lg:pt-10 lg:pr-0 ">
+            <div className="flex flex-col space-y-2 md:flex-row lg:flex-col lg:space-y-4 text-left	w-full rounded-b-2xl bg-kp-dark md:pr-4 lg:pr-0">
+              <div className="space-y-2 md:w-[353px] md:p-4 lg:p-0 md:space-y-4 lg:space-y-2 lg:mt-2">
+                <h4 className="text-[10px] font-hairline text-left">
+                  {isMobile ? project.actionTwo : project.action}
+                </h4>
+                <h3 className="text-[22px] font-medium text-left tracking-wide">
+                  {project.projectName}
+                </h3>
+                <ProjectSocials />
+                <p className=" text-[12px] lg:text-[13px] md:w-[203px] lg:w-[463px]">
+                  {project.description}
+                </p>
+              </div>
+              <div className="flex pt-3 basis-3/4 flex-grow space-x-8 md:flex-col lg:flex-row">
+                <div className="w-[100%] lg:mx-0 lg:w-[100%] flex justify-between space-x-5">
+                  <p className="flex flex-col items-center justify-center border-gradient rounded-xl p-2 text-center w-[106px] h-[85px] md:h-[101px] lg:h-[98px] mx-[1px] relative">
                     <span className="text-[130%] font-bold -mt-1">{project.BNB}</span>
                     <span className="text-xs font-bold">BNB</span>
                     <span className="text-[70%] font-thin lg:text-[10px]">Total Raise</span>
                   </p>
-                  <p className="flex flex-col items-center justify-center border-gradient rounded-xl p-2 text-center w-[106px] h-[85px] lg:h-[98px] mx-[1px] relative">
+                  <p className="flex flex-col items-center justify-center border-gradient rounded-xl p-2 text-center w-[106px] h-[85px] md:h-[101px] lg:h-[98px] mx-[1px] relative">
                     <span className="text-[130%] font-bold leading-2 -mt-1">4</span>
                     <span className="text-xs font-bold lg:text-[10px]">BNB</span>
                     <span className="text-[70%] font-thin lg:text-[10px]">Max contr.</span>
                   </p>
-                  <p className="flex flex-col items-center justify-center border-2 rounded-xl border-white py-[10px] px-[5px] text-center w-[106px] h-[85px] lg:h-[98px] mx-[1px]">
+                  <p className="flex flex-col items-center justify-center border-2 rounded-xl border-white py-[10px] px-[5px] text-center w-[106px] h-[85px] md:h-[101px] lg:h-[98px] mx-[1px]">
                     <Image
                       alt="Elipse"
                       src="/img/Ellipse Green.png"
@@ -101,11 +105,11 @@ const CryptoSaleSection = ({ projects }: Props) => {
                     <span className="text-[70%] font-thin lg:text-[10px]">{project.status}</span>
                   </p>
                 </div>
-                <span className="hidden lg:flex items-end justify-end basis-1/4 flex-grow">
+                <span className="hidden md:flex md:flex-wrap items-end justify-end basis-1/4 flex-grow">
                   <PurpleButton>Explore</PurpleButton>
                 </span>
               </div>
-              <span className="flex items-end pt-3 justify-end basis-1/4 flex-grow lg:hidden">
+              <span className="flex items-end pt-3 justify-end basis-1/4 flex-grow md:hidden">
                 <PurpleButton>Explore</PurpleButton>
               </span>
             </div>

@@ -122,7 +122,7 @@ const Navbar = (): JSX.Element => {
             </div>
           </div>
         </div>
-        <PurpleButton>Connect</PurpleButton>
+        <PurpleButton>&nbsp;&nbsp;Connect&nbsp;&nbsp;</PurpleButton>
       </div>
     </nav>
   );

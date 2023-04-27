@@ -10,9 +10,9 @@ const Footer: React.FC = () => {
           <Image
             alt="Kingpad Logo"
             src="/img/Kingpad-logo2.png"
-            className="mx-auto lg:mx-0 w-[60px] lg:w-[43px]"
-            width={43}
-            height={43}
+            className="mx-auto lg:mx-0 w-[60px] lg:w-[69px]"
+            width={69}
+            height={72}
           />
           <p className="text-[13px] w-[257px] lg:max-w-[249px] text-center lg:text-left">
             Launching the future through De-Fi with safety and security.

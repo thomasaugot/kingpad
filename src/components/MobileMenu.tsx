@@ -5,23 +5,36 @@ import { VscChromeClose } from "react-icons/vsc";
 import { IconContext } from "react-icons";
 import PurpleButton from "./PurpleButton";
 import { Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
+import { useMediaQuery } from "@material-ui/core";
 
 const MobileMenu = (): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen((prev) => !prev);
 
+  const isTablet = useMediaQuery("(min-width:660px)");
+
   return (
     <nav className="z-50 w-full p-8 flex">
       <div className="flex justify-between items-center w-full">
         <div className="flex">
-          <ReactSVG
-            className="pr-8 [&_svg]:w-[29px] [&_svg]:h-[29px]"
-            onClick={() => {
-              window.location.href = "/";
-            }}
-            src="/img/kingpad-logo-mobile.svg"
-          />
+          {isTablet ? (
+            <ReactSVG
+              className="pr-8 [&_svg]:w-[117px] [&_svg]:h-[29px]"
+              onClick={() => {
+                window.location.href = "/";
+              }}
+              src="/img/kingpad_logo.svg"
+            />
+          ) : (
+            <ReactSVG
+              className="pr-8 [&_svg]:w-[29px] [&_svg]:h-[29px]"
+              onClick={() => {
+                window.location.href = "/";
+              }}
+              src="/img/kingpad-logo-mobile.svg"
+            />
+          )}
           <div>
             <div>
               <button className="[&_svg]:w-[30px] [&_svg]:h-[30px]" onClick={toggleMenu}>
@@ -154,7 +167,7 @@ const MobileMenu = (): JSX.Element => {
           </div>
         </div>
         <div className="flex -mr-3">
-          <PurpleButton>Connect</PurpleButton>
+          <PurpleButton>&nbsp;&nbsp;Connect&nbsp;&nbsp;</PurpleButton>
         </div>
       </div>
     </nav>
