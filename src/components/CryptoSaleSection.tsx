@@ -56,10 +56,10 @@ const CryptoSaleSection = ({ projects }: Props) => {
       {projectList?.map((project, index) => (
         <div
           key={index}
-          className="flex flex-col lg:flex-row bg-kp-dark max-w-[348px] md:max-w-[680px] lg:h-[378px] lg:max-w-[1120px] rounded-2xl m-[auto]"
+          className="flex flex-col lg:flex-row bg-kp-dark max-w-[348px] md:max-w-[680px] lg:h-[368px] lg:max-w-[1120px] rounded-2xl m-[auto]"
         >
           <div
-            className="rounded-t-2xl lg:rounded-none lg:rounded-l-2xl relative lg:w-[50%]  h-[339px] md:h-[271px] lg:h-[378px]"
+            className="rounded-t-2xl lg:rounded-none lg:rounded-l-2xl relative lg:w-[50%] h-[339px] md:h-[271px] lg:h-[368px]"
             style={{
               backgroundImage: `url(${isMobile ? project.imageMobile : project.image})`,
               backgroundSize: "cover",
@@ -68,7 +68,7 @@ const CryptoSaleSection = ({ projects }: Props) => {
           >
             <div className="gradient-effect-child lg:absolute w-full lg:h-full rounded-t-2xl"></div>
           </div>
-          <div className="flex h-[339px] md:h-[271px] p-7 lg:pt-10 lg:pr-0 ">
+          <div className="flex h-[339px] md:h-[241px] p-7 lg:pt-10 lg:pr-0 ">
             <div className="flex flex-col space-y-2 md:flex-row lg:flex-col lg:space-y-4 text-left	w-full rounded-b-2xl bg-kp-dark md:pr-4 lg:pr-0">
               <div className="space-y-2 md:w-[353px] md:p-4 lg:p-0 md:space-y-4 lg:space-y-2 lg:mt-2">
                 <h4 className="text-[10px] font-hairline text-left">
@@ -119,7 +119,7 @@ const CryptoSaleSection = ({ projects }: Props) => {
             src="/img/Group_17.svg"
             width="37"
             height="29"
-            className="relative top-[-310px] left-[280px] lg:top-[-130px] lg:left-[-60px] z-10 "
+            className="relative top-[-310px] left-[280px] md:top-[-64px] md:left-[490px] lg:top-[-130px] lg:left-[-60px] z-10 "
           />
         </div>
       ))}
