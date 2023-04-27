@@ -137,13 +137,13 @@ const MobileMenu = (): JSX.Element => {
                       </Accordion>
                     </div>
                     <div className="flex flex-col space-y-7 -mt-7">
-                      <Link href="/" className="text-[25px] font-bold">
+                      <Link href="/" className="text-[25px]">
                         About
                       </Link>
-                      <Link href="/" className="text-[25px] font-bold">
+                      <Link href="/" className="text-[25px]">
                         Kingpass
                       </Link>
-                      <Link href="/" className="text-[25px] font-bold">
+                      <Link href="/" className="text-[25px]">
                         $KING
                       </Link>
                     </div>

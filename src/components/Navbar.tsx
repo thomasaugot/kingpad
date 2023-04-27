@@ -5,7 +5,6 @@ import { useState, useRef } from "react";
 import { BsChevronCompactDown } from "react-icons/bs";
 
 const Navbar = (): JSX.Element => {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [subMenuOpen, setSubMenuOpen] = useState(false);
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 

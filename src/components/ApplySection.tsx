@@ -19,7 +19,7 @@ function ApplySection(): JSX.Element {
       <div className="flex lg:basis-1/3 justify-between order-2 lg:order-3">
         <div className="hidden lg:block h-full w-[2px] bg-white"></div>
         <div className="[&_*]:text-center">
-          <h3 className="gradient-text relative text-[37px] font-bold">565K </h3>
+          <h3 className="gradient-text relative text-[37px] font-bold">565K</h3>
           <p className="text-[13px]">
             Raised <br /> capital
           </p>

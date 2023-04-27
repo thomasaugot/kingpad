@@ -44,6 +44,10 @@ a {
   font-family: "Gotham light";
 }
 
+.MuiAccordionSummary-content {
+  font-family: "Gotham light";
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
