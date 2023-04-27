@@ -1,3 +1,7 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -44,6 +48,7 @@ a {
   font-family: "Gotham light";
 }
 
+/* this line overwrites the "Services" link style in mobile menu  */
 .MuiAccordionSummary-content {
   font-family: "Gotham light";
 }
@@ -247,21 +252,23 @@ a {
 }
 
 /* Purple background button */
-
 .purple-gradient-button {
-  background: white;
-  background-image: linear-gradient(to right, #cd9bf4 0%, #432ad9 100%);
+  background-image: white;
+  background: linear-gradient(to right, #cd9bf4 0%, #432ad9 100%);
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
-  transition: all 0.6s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .purple-gradient-button:hover {
+  background-image: white;
   background: white;
+  transition: color 0.3s ease-in-out;
 }
 
 .purple-gradient-button:hover span {
   color: black;
+  transition: color 0.3s ease-in-out;
 }
 
 .purple-gradient-button span {
