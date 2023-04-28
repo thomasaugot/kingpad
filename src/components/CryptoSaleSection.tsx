@@ -81,7 +81,7 @@ const CryptoSaleSection = ({ projects }: Props) => {
                 </p>
               </div>
               <div className="flex pt-3 basis-3/4 flex-grow space-x-8 md:flex-col lg:flex-row">
-                <div className="w-[100%] lg:mx-0 lg:w-[100%] flex justify-between space-x-5">
+                <div className="w-[100%] lg:mx-0 lg:w-[100%] flex justify-between space-x-2">
                   <p className="flex flex-col items-center justify-center border-gradient rounded-xl p-2 text-center w-[106px] h-[85px] md:h-[101px] lg:h-[98px] mx-[1px] relative">
                     <span className="text-[130%] font-bold -mt-1">{project.BNB}</span>
                     <span className="text-xs font-bold">BNB</span>
