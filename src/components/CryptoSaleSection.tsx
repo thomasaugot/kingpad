@@ -6,7 +6,6 @@ import ProjectSocials from "./ProjectSocials";
 
 interface Project {
   image: string;
-  imageMobile: string;
   action: string;
   actionTwo: string;
   projectName: string;
@@ -23,7 +22,6 @@ interface Props {
 const CryptoSaleSection = ({ projects }: Props) => {
   const [projectData, setProjectData] = useState<Project>({
     image: "",
-    imageMobile: "",
     action: "",
     actionTwo: "",
     projectName: "",
@@ -35,11 +33,10 @@ const CryptoSaleSection = ({ projects }: Props) => {
 
   const [projectList, setProjectList] = useState<Project[]>([
     {
-      image: "/img/onyx.png",
-      imageMobile: "/img/mario.png",
+      image: "/img/mario.PNG",
       action: "SALE IN PROGRESS",
       actionTwo: "NEXT LAUNCH",
-      projectName: "Onyx",
+      projectName: "Project Name",
       BNB: "500",
       BNB2: "4",
       status: "LIVE NOW",
@@ -61,8 +58,9 @@ const CryptoSaleSection = ({ projects }: Props) => {
           <div
             className="rounded-t-2xl lg:rounded-none lg:rounded-l-2xl relative lg:w-[50%] h-[339px] md:h-[271px] lg:h-[368px]"
             style={{
-              backgroundImage: `url(${isMobile ? project.imageMobile : project.image})`,
+              backgroundImage: `url(${project.image})`,
               backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
             }}
           >
