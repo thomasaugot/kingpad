@@ -308,3 +308,17 @@ a {
 .rocket-container {
   overflow: visible !important;
 }
+
+/* for the mobile carousel */
+
+.slide-card {
+  margin-right: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.slick-list {
+  width: 253px;
+  margin-right: -30px;
+  overflow: visible !important;
+}

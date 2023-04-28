@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Footer: React.FC = () => {
   return (
-    <div className="w-[348px] lg:w-[1120px] flex flex-col mx-auto space-y-[25px] pb-24">
+    <div className="w-[348px] md:w-[680px] lg:w-[1120px] flex flex-col mx-auto space-y-[25px] md:-space-y-6 lg:space-y-[25px] pb-24">
       <div className="flex flex-col my-3 lg:my-0 lg:flex-row">
         <div className="flex flex-col mx-auto space-y-8 lg:space-y-10 lg:mx-0 lg:grow lg:max-w-[585px] lg:basis-[2/6]">
           <Image
@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
             Launching the future through De-Fi with safety and security.
           </p>
         </div>
-        <div className="mx-auto lg:mx-0 grid grid-cols-2 mt-10 w-[333px] lg:basis-[4/6] lg:mt-0 lg:grid-cols-none lg:flex lg:justify-center lg:items-left gap-x-24 lg:space-x-0">
+        <div className="mx-auto lg:mx-0 grid grid-cols-2 mt-10 w-[333px] md:w-[680px] lg:basis-[4/6] lg:mt-0 md:grid-cols-none md:flex md:justify-center md:items-left gap-x-24 md:space-x-0">
           <div className="flex flex-col text-[15px] space-y-3 mb-8 lg:mb-0 lg:basis-1/4 lg:min-w-[120px]">
             <h4 className="text-kp-purple">About</h4>
             <Link href={"/"}>Launch with us</Link>
@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
       </div>
       <div className="flex flex-col-reverse lg:flex-row justify-between items-start align-middle lg:space-y-0">
         <div>
-          <p className="text-[8px] lg:text-[10px] mx-auto lg:mx-0 max-w-[333px] lg:max-w-[615px] mt-[35px] ">
+          <p className="text-[8px] lg:text-[10px] mx-auto lg:mx-0 max-w-[333px] md:max-w-[667px] lg:max-w-[615px] mt-[35px] md:mt-[60px] lg:mt-9 ">
             Thank you for visiting Kingpad, a scalable launchpad designed to support companies of
             the future. Our mission is to provide innovative solutions for emerging businesses and
             help them achieve their full potential. However, please note that the content on our
@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
             decisions.
           </p>
         </div>
-        <div className="flex mx-auto lg:mx-0 lg:pt-12 lg:ml-auto">
+        <div className="flex mx-auto lg:mx-0 md:-pt-[90px] lg:pt-12 lg:ml-auto">
           <Socials />
         </div>
       </div>

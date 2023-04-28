@@ -46,8 +46,8 @@ const Projects = ({ projects }: Props) => {
   ]);
 
   return (
-    <div className="gradient-effect-parent content-center flex flex-wrap items-center align-middle justify-center lg:mx-auto my-6 w-full">
-      <div className="flex flex-wrap lg:justify-between md:w-[680px] lg:w-[1120px] -space-y-5 md:-space-y-0">
+    <div className="gradient-effect-parent content-center flex flex-wrap items-center align-middle justify-center lg:mx-auto my-8 w-full">
+      <div className="flex flex-wrap lg:justify-between md:w-[680px] lg:w-[1120px] -space-y-5 md:space-y-0">
         {projectList?.map((project, index) => (
           <div
             key={index}
@@ -62,7 +62,7 @@ const Projects = ({ projects }: Props) => {
               <div className="gradient-effect-child absolute w-full h-full rounded-t-2xl "></div>
             </div>
             <div className="flex flex-col px-7 py-6 text-left	 rounded-b-2xl bg-kp-dark">
-              <h4 className="text-[10px] font-hairline text-left">NEXT LAUNCH</h4>
+              <h4 className="text-[10px] font-hairline text-left md:mt-2 lg:mt-0">NEXT LAUNCH</h4>
               <h3 className="text-[22px] font-medium text-left mt-[8px] mb-[-19px] tracking-wide">
                 {project.projectName}
               </h3>
@@ -99,7 +99,7 @@ const Projects = ({ projects }: Props) => {
                     {project.startDate}
                   </span>
                 </h4>
-                <div className="text-left mt-[10px] ml-auto">
+                <div className="text-left mt-[12px] md:mt-[16px] lg:mt-[12px] ml-auto">
                   <PurpleButton>Explore</PurpleButton>
                 </div>
               </div>

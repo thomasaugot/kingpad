@@ -43,8 +43,12 @@ const MobileMenu = (): JSX.Element => {
               {menuOpen && (
                 <div className="fixed inset-0 menu-background-gradient z-50 flex flex-col">
                   <div className="flex justify-between p-8">
-                    <div className="[&_svg]:w-[29px] [&_svg]:h-[29px]">
-                      <ReactSVG src="/img/Logo-menu.svg" />
+                    <div>
+                      {isTablet ? (
+                        <ReactSVG className="w-[29px] h-[29px]" src="/img/logo-menu-tablet.svg" />
+                      ) : (
+                        <ReactSVG src="/img/Logo-menu.svg" />
+                      )}
                     </div>
                     <button className="text-white hover:text-gray-300" onClick={toggleMenu}>
                       <IconContext.Provider
@@ -59,7 +63,7 @@ const MobileMenu = (): JSX.Element => {
                       </IconContext.Provider>
                     </button>
                   </div>
-                  <div className="flex flex-col ml-[34%]">
+                  <div className="flex flex-col ml-[34%] md:ml-[40%]">
                     <div className="flex flex-col justify-center my-10 space-y-7">
                       <Accordion
                         sx={{
@@ -74,7 +78,7 @@ const MobileMenu = (): JSX.Element => {
                             backgroundColor: "transparent",
                             boxShadow: "none",
                             border: "none",
-                            fontSize: "25px",
+                            fontSize: isTablet ? "31px" : "25px",
                             margin: "0",
                             padding: "0",
                             // fontWeight: "100 !important", NOT WORKING
@@ -91,7 +95,7 @@ const MobileMenu = (): JSX.Element => {
                         >
                           <Link
                             href="/"
-                            className="text-kp-dark font-bold text-[20px] submenu-navlink block py-2 px-4"
+                            className="text-kp-dark font-bold text-[20px] md:text-[27px] submenu-navlink block py-2 px-4"
                           >
                             <span>
                               <ReactSVG
@@ -104,7 +108,7 @@ const MobileMenu = (): JSX.Element => {
                           </Link>
                           <Link
                             href="/"
-                            className="text-kp-dark font-bold text-[20px] submenu-navlink block py-2 px-4 relative"
+                            className="text-kp-dark font-bold text-[20px] md:text-[27px] submenu-navlink block py-2 px-4 relative"
                           >
                             <span>
                               <ReactSVG
@@ -122,7 +126,7 @@ const MobileMenu = (): JSX.Element => {
 
                           <Link
                             href="/"
-                            className="text-kp-dark font-bold text-[20px] submenu-navlink block py-2 px-4"
+                            className="text-kp-dark font-bold text-[20px] md:text-[27px] submenu-navlink block py-2 px-4"
                           >
                             <span>
                               <ReactSVG
@@ -135,7 +139,7 @@ const MobileMenu = (): JSX.Element => {
                           </Link>
                           <Link
                             href="/"
-                            className="text-kp-dark font-bold text-[20px] submenu-navlink block py-2 px-4"
+                            className="text-kp-dark font-bold text-[20px] md:text-[27px] submenu-navlink block py-2 px-4"
                           >
                             <span>
                               <ReactSVG
@@ -150,13 +154,13 @@ const MobileMenu = (): JSX.Element => {
                       </Accordion>
                     </div>
                     <div className="flex flex-col space-y-7 -mt-7">
-                      <Link href="/" className="text-[25px]">
+                      <Link href="/" className="text-[25px] md:text-[31px]">
                         About
                       </Link>
-                      <Link href="/" className="text-[25px]">
+                      <Link href="/" className="text-[25px] md:text-[31px]">
                         Kingpass
                       </Link>
-                      <Link href="/" className="text-[25px]">
+                      <Link href="/" className="text-[25px] md:text-[31px]">
                         $KING
                       </Link>
                     </div>

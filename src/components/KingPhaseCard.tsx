@@ -2,6 +2,10 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { ReactSVG } from "react-svg";
 import TransparentButton from "./TransparentButton";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+import { useMediaQuery } from "@material-ui/core";
 
 interface KingPhaseCard {
   number: string;
@@ -53,42 +57,89 @@ const KingPhaseCard = ({ phases }: Props) => {
     window.open(telegramURL, "_blank");
   };
 
+  // this enables conditional slider rendering, only on mobile devices.
+  const isMobile = useMediaQuery("(max-width: 660px)");
+
+  // this variable is for the slider's settings.
+  const settings = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    swipeToSlide: true,
+    arrows: false,
+    useCSS: true,
+    className: "slide-card",
+  };
+
   return (
-    <div className="max-w-[1120px] flex flex-col mx-auto pb-24">
+    <div className="max-w-[348px] md:max-w-[680px] lg:max-w-[1120px] flex flex-col mx-auto pb-24">
       <h3 className="text-[30px] mx-auto my-8">How to participate?</h3>
-      <div className="flex flex-col lg:flex-row w-full space-y-6 lg:space-y-0 lg:space-x-6">
-        {KingPhaseCardsList.map((phase) => {
-          return (
-            <div
-              key={phase.number}
-              className="flex flex-col lg:flex-row max-h-[485px] lg:h-[410px] w-[348px] m-auto lg:m-0 lg:basis-1/2 background-gradient-card rounded-2xl p-10 space-y-3 rocket-container"
-            >
-              <div className="flex flex-col space-y-4">
+      {isMobile ? (
+        <div className="w-[348px] overflow-visible">
+          <Slider {...settings}>
+            {KingPhaseCardsList.map((phase) => {
+              return (
+                <div key={phase.number} className="flex h-[485px] mb-[40px] -ml-6">
+                  <div>
+                    <div className="flex flex-col h-[485px] space-y-4 background-gradient-card rounded-2xl py-8 px-6 rocket-container slide-card overflow-visible">
+                      <h6 className="text-base font-hairline">{phase.number}</h6>
+                      <div className="flex space-x-3">
+                        <ReactSVG src={phase.logo} />
+                        <h3 className="text-[22px] ">{phase.title}</h3>
+                      </div>
+                      <p className="w-[174px] text-[12px]">{phase.description}</p>
+                      <p className="w-[174px] text-[12px]">{phase.footer}</p>
+                    </div>
+                    <Image
+                      alt="rocket ship"
+                      src={phase.image}
+                      width="269"
+                      height="346"
+                      className="relative w-[200px] top-[-165px] right-[-25px] z-50"
+                    />
+                  </div>
+                </div>
+              );
+            })}
+          </Slider>
+        </div>
+      ) : (
+        <div className="flex w-full space-x-6">
+          {KingPhaseCardsList.map((phase, index) => {
+            const isSecondCard = index === 1;
+            return (
+              <div
+                key={phase.number}
+                className="flex flex-col max-h-[485px] md:w-[334px] lg:h-[410px] w-[348px] lg:w-[50%] background-gradient-card rounded-2xl p-10 space-y-4 rocket-container"
+              >
                 <h6 className="text-base font-hairline">{phase.number}</h6>
                 <div className="flex space-x-3">
                   <ReactSVG src={phase.logo} />
                   <h3 className="text-[22px] lg:text-[30px] ">{phase.title}</h3>
                 </div>
-                <p className="w-[168px] lg:w-[201px] text-[12px] lg:text-[13px]">
-                  {phase.description}
-                </p>
-                <p className="w-[168px] lg:w-[201px] text-[12px] lg:text-[13px] lg:pb-0">
+                <p className="w-[234px] lg:w-[201px] text-[12px]">{phase.description}</p>
+                <p className="w-[234px] lg:w-[201px] text-[12px] lg:text-[13px] lg:pb-0">
                   {phase.footer}
                 </p>
+                <Image
+                  alt="rocket ship"
+                  src={phase.image}
+                  width="269"
+                  height="346"
+                  className={`relative lg:w-[269px] lg:top-[-280px] lg:ml-auto ${
+                    isSecondCard ? "md:top-[-20px] lg:top-[-310px]" : ""
+                  }`}
+                />
               </div>
-              <Image
-                alt="rocket ship"
-                src={phase.image}
-                width="269"
-                height="346"
-                className="absolute w-[200px] lg:w-[269px] top-[50px] right-[-60px] lg:top-0 lg:right-5 z-50"
-              />
-            </div>
-          );
-        })}
-      </div>
-      <h3 className="text-[24px] lg:text-[30px] text-center mx-auto mt-[100px] lg:mt-24 mb-8">
-        Stay updated <br className="lg:hidden" /> on new launches
+            );
+          })}
+        </div>
+      )}
+
+      <h3 className="text-[24px] lg:text-[30px] text-center mx-auto mt-[100px] md:mt-[180px] lg:mt-24 mb-8">
+        Stay updated <br className="md:hidden" /> on new launches
       </h3>
       <div className="inline-block w-auto relative">
         <div className="flex justify-center">
