@@ -3,8 +3,8 @@ import Socials from "./Socials";
 
 const Header: React.FC = () => {
   return (
-    <header className="max-w-[1420px] mx-auto pb-[130px] flex flex-col lg:pl-[240px] py-[50px] space-x-1  lg:flex-row relative items-center [&_*]:text-white w-full">
-      <div className="flex w-[80vw] lg:w-[70vw]">
+    <header className="max-w-[1420px] mx-auto pb-[130px] flex flex-col lg:pl-[240px] py-[50px] lg:flex-row relative items-center [&_*]:text-white w-full">
+      <div className="flex lg:w-[70vw]">
         <div className="flex flex-col justify-center md:mx-auto lg:mx-0">
           <h1 className="tracking-[1px] flex flex-col justify-center lg:justify-start w-[100%] text-center lg:text-left mx-auto -mt-8 lg:mt-0 text-white md:w-[494px] lg:w-[534px] text-[35px] md:text-[55px] mb-2 font-extrabold whitespace-normal lg:whitespace-nowrap">
             <span>A Safe place</span>
