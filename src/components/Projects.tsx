@@ -41,7 +41,7 @@ const Projects = ({ projects }: Props) => {
       startDate: "TBA",
       status: "UPCOMING",
       image: "/img/placeholder2.png",
-      icon: "/img/Group_17.svg",
+      icon: "/img/Group_39.svg",
     },
   ]);
 
