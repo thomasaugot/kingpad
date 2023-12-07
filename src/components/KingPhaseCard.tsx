@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import { useState } from "react";
 import { ReactSVG } from "react-svg";
 import TransparentButton from "./TransparentButton";
 import "slick-carousel/slick/slick.css";
@@ -79,10 +79,10 @@ const KingPhaseCard = ({ phases }: Props) => {
       {isMobile ? (
         <div className="w-[348px] overflow-visible">
           <Slider {...settings}>
-            {KingPhaseCardsList.map((phase) => {
-              return (
-                <div key={phase.number} className="flex h-[485px] mb-[40px] -ml-6">
-                  <div>
+            {KingPhaseCardsList.map(
+              (phase: any) =>
+                (
+                  <div key={phase.number} className="flex h-[485px] mb-[40px] -ml-6">
                     <div className="flex flex-col h-[485px] space-y-4 background-gradient-card rounded-2xl py-8 px-6 rocket-container slide-card overflow-visible">
                       <h6 className="text-base font-hairline">{phase.number}</h6>
                       <div className="flex space-x-3">
@@ -100,14 +100,13 @@ const KingPhaseCard = ({ phases }: Props) => {
                       className="relative w-[200px] top-[-165px] right-[-25px] z-50"
                     />
                   </div>
-                </div>
-              );
-            })}
+                ) as any
+            )}
           </Slider>
         </div>
       ) : (
         <div className="flex w-full space-x-6">
-          {KingPhaseCardsList.map((phase, index) => {
+          {KingPhaseCardsList.map((phase: any, index: any) => {
             const isSecondCard = index === 1;
             return (
               <div

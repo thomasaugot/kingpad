@@ -1,12 +1,13 @@
 import Image from "next/image";
-import { PropsWithChildren, useState } from "react";
+import * as React from "react";
+import { useState } from "react";
 
 interface ButtonProps {
-  children: React.ReactNode;
+  children: any;
   onClick?: () => void;
 }
 
-const TransparentButton = ({ children, onClick }: PropsWithChildren<ButtonProps>) => {
+const TransparentButton = ({ children, onClick }: any) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleClick = () => {
