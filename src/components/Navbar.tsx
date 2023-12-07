@@ -3,6 +3,7 @@ import { ReactSVG } from "react-svg";
 import PurpleButton from "./PurpleButton";
 import { useState, useRef } from "react";
 import { BsChevronCompactDown } from "react-icons/bs";
+import React from "react";
 
 const Navbar = (): JSX.Element => {
   const [subMenuOpen, setSubMenuOpen] = useState(false);

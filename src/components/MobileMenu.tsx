@@ -2,10 +2,11 @@ import Link from "next/link";
 import { ReactSVG } from "react-svg";
 import { useState } from "react";
 import { VscChromeClose } from "react-icons/vsc";
-import { IconContext } from "react-icons";
+// import { IconContext } from "react-icons";
 import PurpleButton from "./PurpleButton";
 import { Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
 import { useMediaQuery } from "@material-ui/core";
+import React from "react";
 
 const MobileMenu = (): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -51,16 +52,7 @@ const MobileMenu = (): JSX.Element => {
                       )}
                     </div>
                     <button className="text-white hover:text-gray-300" onClick={toggleMenu}>
-                      <IconContext.Provider
-                        value={{
-                          style: {
-                            width: "29px",
-                            height: "29px",
-                          },
-                        }}
-                      >
-                        <VscChromeClose />
-                      </IconContext.Provider>
+                      <VscChromeClose />
                     </button>
                   </div>
                   <div className="flex flex-col ml-[34%] md:ml-[40%]">

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ReactSVG } from "react-svg";
+import React from "react";
 
 const Socials: React.FC = () => {
   const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {

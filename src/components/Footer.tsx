@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Socials from "./Socials";
 import Link from "next/link";
+import React from "react";
 
 const Footer: React.FC = () => {
   return (

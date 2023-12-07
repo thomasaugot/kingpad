@@ -1,3 +1,4 @@
+import React from "react";
 import TransparentButton from "./TransparentButton";
 
 function ApplySection(): JSX.Element {

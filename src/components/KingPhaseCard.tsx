@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { useMediaQuery } from "@material-ui/core";
+import React from "react";
 
 interface KingPhaseCard {
   number: string;
