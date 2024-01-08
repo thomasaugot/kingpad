@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
 import React from "react";
 
 const useMediaQuery = (query) => {
-  const [matches, setMatches] = useState(window.matchMedia(query).matches);
+  const [matches, setMatches] = useState(false);
 
   useEffect(() => {
     const mediaQueryList = window.matchMedia(query);
@@ -22,10 +22,10 @@ const useMediaQuery = (query) => {
       setMatches(mediaQueryList.matches);
     };
 
-    mediaQueryList.addListener(handleResize);
+    handleResize(); // Initial check
 
-    // Initial check
-    handleResize();
+    // Attach listener for changes in media query
+    mediaQueryList.addListener(handleResize);
 
     // Cleanup the listener when the component unmounts
     return () => {
