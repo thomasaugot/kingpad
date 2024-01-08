@@ -329,6 +329,7 @@ a {
   }
   100% {
     transform: translateY(-30px);
+    z-index: -1;
   }
 }
 
