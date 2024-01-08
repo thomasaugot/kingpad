@@ -81,7 +81,7 @@ const KingPhaseCard = ({ phases }: Props) => {
         <div className="w-[348px] overflow-visible">
           <Slider {...settings}>
             {KingPhaseCardsList.map(
-              (phase: any) =>
+              (phase: KingPhaseCard) =>
                 (
                   <div key={phase.number} className="flex h-[485px] mb-[40px] -ml-6">
                     <div className="flex flex-col h-[485px] space-y-4 background-gradient-card rounded-2xl py-8 px-6 rocket-container slide-card overflow-visible">

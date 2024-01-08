@@ -27,7 +27,10 @@ const Header: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="absolute right-[10px] top-[270px] md:right-[180px] md:top-[350px]  lg:right-[170px] lg:top-[40px] ">
+      <div
+        style={{ animation: "rocketAnimation 2s infinite alternate" }}
+        className="absolute right-[10px] top-[270px] md:right-[180px] md:top-[350px]  lg:right-[170px] lg:top-[40px] "
+      >
         <Image
           alt="rocket ship"
           className="relative"
