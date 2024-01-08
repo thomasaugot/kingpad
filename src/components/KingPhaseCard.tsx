@@ -62,7 +62,7 @@ const KingPhaseCard = ({ phases }: Props) => {
       description:
         "Early investing guaranteed. The Kingstarter is the very first launching phase at Kingpad, where users that hold a Kingpass are able to get a secured allocation before anyone else.",
       footer: "Steps are simple. Just get a Kingpass at kingpass.finance.",
-      image: "/img/rocket-stars.png",
+      image: "/img/rocket-stars.PNG",
     },
     {
       number: "PHASE 2",
@@ -72,7 +72,7 @@ const KingPhaseCard = ({ phases }: Props) => {
         "Both for public and whitelisted investors. Work for your whitelist to invest before public users during the first two hours.",
       footer:
         "Enjoy competing for your early allocation whether you are whitelisted or not. Enjoy being part of the crowd. Enjoy Kingsale.",
-      image: "/img/rocket-diamonds.png",
+      image: "/img/rocket-diamonds.PNG",
     },
   ]);
 

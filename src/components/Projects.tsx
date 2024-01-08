@@ -32,7 +32,7 @@ const Projects = ({ projects }: Props) => {
       BNB: "1800",
       startDate: "20 | 14 | 34 | 12",
       status: "UPCOMING",
-      image: "/img/placeholder-colored.png",
+      image: "/img/placeholder-colored.PNG",
       icon: "/img/Group_39.svg",
     },
     {
@@ -40,7 +40,7 @@ const Projects = ({ projects }: Props) => {
       BNB: "1800",
       startDate: "TBA",
       status: "UPCOMING",
-      image: "/img/placeholder2.png",
+      image: "/img/placeholder2.PNG",
       icon: "/img/Group_39.svg",
     },
   ]);
@@ -81,7 +81,7 @@ const Projects = ({ projects }: Props) => {
                 <p className="flex flex-col items-center justify-center border-2 rounded-xl border-white py-[10px] px-[5px] text-center w-[106px] h-[85px] lg:h-[98px] mx-[1px]">
                   <Image
                     alt="Elipse"
-                    src="/img/Ellipse 3.png"
+                    src="/img/Ellipse 3.PNG"
                     width="23"
                     height="23"
                     className="mx-auto mt-1 mb-2"
@@ -116,7 +116,7 @@ const Projects = ({ projects }: Props) => {
         <div className="relative rounded-2xl m-auto max-w-[348px] basis-[100%] bg-kp-dark md:max-w-[680px] lg:max-w-[348px] lg:h-[486px] lg:flex-col lg:m-0">
           <Image
             alt="rocket ship"
-            src="/img/rocket-up.png"
+            src="/img/rocket-up.PNG"
             width="157"
             height="372"
             className="absolute drop-shadow hidden sm:block rotate-90 w-[120px] top-[-50px] left-[100px] lg:rotate-0 lg:relative lg:top-[-20px]	lg:left-[33%]"

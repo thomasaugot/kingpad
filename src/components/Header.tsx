@@ -34,7 +34,7 @@ const Header: React.FC = () => {
         <Image
           alt="rocket ship"
           className="relative"
-          src="/img/rocket_ship.png"
+          src="/img/rocket_ship.PNG"
           width="453"
           height="305"
         />
@@ -42,7 +42,7 @@ const Header: React.FC = () => {
           className="absolute max-w-[1400px] z-[-1] right-[-550px] lg:right-[-450px]
               top-[-440px]"
           alt="glow"
-          src="/img/glow.png"
+          src="/img/glow.PNG"
           width="1400"
           height="800"
         />

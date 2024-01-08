@@ -119,7 +119,7 @@ const CryptoSaleSection = ({ projects }: Props) => {
                   <p className="flex flex-col items-center justify-center border-2 rounded-xl border-white py-[10px] px-[5px] text-center w-[106px] h-[85px] md:h-[101px] lg:h-[98px] mx-[1px]">
                     <Image
                       alt="Elipse"
-                      src="/img/Ellipse Green.png"
+                      src="/img/Ellipse Green.PNG"
                       width="23"
                       height="23"
                       className="mx-auto mt-1 mb-2"

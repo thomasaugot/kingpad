@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
         <div className="flex flex-col mx-auto space-y-8 lg:space-y-10 lg:mx-0 lg:grow lg:max-w-[585px] lg:basis-[2/6]">
           <Image
             alt="Kingpad Logo"
-            src="/img/Kingpad-logo2.png"
+            src="/img/Kingpad-logo2.PNG"
             className="mx-auto lg:mx-0 w-[60px] lg:w-[69px]"
             width={69}
             height={72}

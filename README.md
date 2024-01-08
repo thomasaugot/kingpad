@@ -1,6 +1,6 @@
 # Kingpad Landing Page
 
-![app photo](/readme-pic.png)
+![app photo](/readme-pic.PNG)
 
 A complex landing page I build for a crypto startup.
 
