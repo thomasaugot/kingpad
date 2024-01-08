@@ -1,18 +1,41 @@
 import Link from "next/link";
 import { ReactSVG } from "react-svg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { VscChromeClose } from "react-icons/vsc";
-// import { IconContext } from "react-icons";
 import PurpleButton from "./PurpleButton";
 import { Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
-import { useMediaQuery } from "@material-ui/core";
 import React from "react";
+
+const useMediaQuery = (query) => {
+  const [matches, setMatches] = useState(window.matchMedia(query).matches);
+
+  useEffect(() => {
+    const mediaQueryList = window.matchMedia(query);
+
+    const handleResize = () => {
+      setMatches(mediaQueryList.matches);
+    };
+
+    mediaQueryList.addListener(handleResize);
+
+    // Initial check
+    handleResize();
+
+    // Cleanup the listener when the component unmounts
+    return () => {
+      mediaQueryList.removeListener(handleResize);
+    };
+  }, [query]);
+
+  return matches;
+};
 
 const MobileMenu = (): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen((prev) => !prev);
 
+  // this only to make it match the design, may be removed later
   const isTablet = useMediaQuery("(min-width:660px)");
 
   return (
@@ -73,7 +96,6 @@ const MobileMenu = (): JSX.Element => {
                             fontSize: isTablet ? "31px" : "25px",
                             margin: "0",
                             padding: "0",
-                            // fontWeight: "100 !important", NOT WORKING
                           }}
                         >
                           Services{" "}

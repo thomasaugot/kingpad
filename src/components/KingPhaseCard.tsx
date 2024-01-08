@@ -1,11 +1,10 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ReactSVG } from "react-svg";
 import TransparentButton from "./TransparentButton";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { useMediaQuery } from "@material-ui/core";
 import React from "react";
 
 interface KingPhaseCard {
@@ -20,6 +19,30 @@ interface KingPhaseCard {
 interface Props {
   phases: KingPhaseCard[];
 }
+
+const useMediaQuery = (query) => {
+  const [matches, setMatches] = useState(window.matchMedia(query).matches);
+
+  useEffect(() => {
+    const mediaQueryList = window.matchMedia(query);
+
+    const handleResize = () => {
+      setMatches(mediaQueryList.matches);
+    };
+
+    mediaQueryList.addListener(handleResize);
+
+    // Initial check
+    handleResize();
+
+    // Cleanup the listener when the component unmounts
+    return () => {
+      mediaQueryList.removeListener(handleResize);
+    };
+  }, [query]);
+
+  return matches;
+};
 
 const KingPhaseCard = ({ phases }: Props) => {
   const [KingPhaseCardData, setKingPhaseCardData] = useState<KingPhaseCard>({
@@ -53,11 +76,6 @@ const KingPhaseCard = ({ phases }: Props) => {
     },
   ]);
 
-  const handleTelegramButtonClick = () => {
-    const telegramURL = "https://...";
-    window.open(telegramURL, "_blank");
-  };
-
   // this enables conditional slider rendering, only on mobile devices.
   const isMobile = useMediaQuery("(max-width: 660px)");
 
@@ -74,35 +92,37 @@ const KingPhaseCard = ({ phases }: Props) => {
     className: "slide-card",
   };
 
+  const handleTelegramButtonClick = () => {
+    const telegramURL = "https://...";
+    window.open(telegramURL, "_blank");
+  };
+
   return (
     <div className="max-w-[348px] md:max-w-[680px] lg:max-w-[1120px] flex flex-col mx-auto pb-24">
       <h3 className="text-[30px] mx-auto my-8">How to participate?</h3>
       {isMobile ? (
         <div className="w-[348px] overflow-visible">
           <Slider {...settings}>
-            {KingPhaseCardsList.map(
-              (phase: KingPhaseCard) =>
-                (
-                  <div key={phase.number} className="flex h-[485px] mb-[40px] -ml-6">
-                    <div className="flex flex-col h-[485px] space-y-4 background-gradient-card rounded-2xl py-8 px-6 rocket-container slide-card overflow-visible">
-                      <h6 className="text-base font-hairline">{phase.number}</h6>
-                      <div className="flex space-x-3">
-                        <ReactSVG src={phase.logo} />
-                        <h3 className="text-[22px] ">{phase.title}</h3>
-                      </div>
-                      <p className="w-[174px] text-[12px]">{phase.description}</p>
-                      <p className="w-[174px] text-[12px]">{phase.footer}</p>
-                    </div>
-                    <Image
-                      alt="rocket ship"
-                      src={phase.image}
-                      width="269"
-                      height="346"
-                      className="relative w-[200px] top-[-165px] right-[-25px] z-50"
-                    />
+            {KingPhaseCardsList.map((phase: KingPhaseCard) => (
+              <div key={phase.number} className="flex h-[485px] mb-[40px] -ml-6">
+                <div className="flex flex-col h-[485px] space-y-4 background-gradient-card rounded-2xl py-8 px-6 rocket-container slide-card overflow-visible">
+                  <h6 className="text-base font-hairline">{phase.number}</h6>
+                  <div className="flex space-x-3">
+                    <ReactSVG src={phase.logo} />
+                    <h3 className="text-[22px] ">{phase.title}</h3>
                   </div>
-                ) as any
-            )}
+                  <p className="w-[174px] text-[12px]">{phase.description}</p>
+                  <p className="w-[174px] text-[12px]">{phase.footer}</p>
+                </div>
+                <Image
+                  alt="rocket ship"
+                  src={phase.image}
+                  width="269"
+                  height="346"
+                  className="relative w-[200px] top-[-165px] right-[-25px] z-50"
+                />
+              </div>
+            ))}
           </Slider>
         </div>
       ) : (

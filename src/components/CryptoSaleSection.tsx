@@ -1,8 +1,8 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 import PurpleButton from "./PurpleButton";
-import { useMediaQuery } from "@material-ui/core";
 import ProjectSocials from "./ProjectSocials";
+import { useEffect, useState } from "react";
 
 interface Project {
   image: string;
@@ -18,6 +18,30 @@ interface Project {
 interface Props {
   projects: Project[];
 }
+
+const useMediaQuery = (query) => {
+  const [matches, setMatches] = useState(window.matchMedia(query).matches);
+
+  useEffect(() => {
+    const mediaQueryList = window.matchMedia(query);
+
+    const handleResize = () => {
+      setMatches(mediaQueryList.matches);
+    };
+
+    mediaQueryList.addListener(handleResize);
+
+    // Initial check
+    handleResize();
+
+    // Cleanup the listener when the component unmounts
+    return () => {
+      mediaQueryList.removeListener(handleResize);
+    };
+  }, [query]);
+
+  return matches;
+};
 
 const CryptoSaleSection = ({ projects }: Props) => {
   const [projectData, setProjectData] = useState<Project>({

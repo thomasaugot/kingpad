@@ -1,15 +1,40 @@
 import Head from "next/head";
-import { useMediaQuery } from "@material-ui/core";
-import DesktopNavbar from "@/components/Navbar";
-import MobileMenu from "@/components/MobileMenu";
+import DesktopNavbar from "../components/Navbar";
+import MobileMenu from "../components/MobileMenu";
 import Projects from "../components/Projects";
-import ApplySection from "@/components/ApplySection";
-import Header from "@/components/Header";
-import CryptoLogos from "@/components/CryptoLogos";
-import CryptoSaleSection from "@/components/CryptoSaleSection";
-import MintPassSection from "@/components/MintPassSection";
-import Footer from "@/components/Footer";
-import KingPhaseCard from "@/components/KingPhaseCard";
+import ApplySection from "../components/ApplySection";
+import Header from "../components/Header";
+import CryptoLogos from "../components/CryptoLogos";
+import CryptoSaleSection from "../components/CryptoSaleSection";
+import MintPassSection from "../components/MintPassSection";
+import Footer from "../components/Footer";
+import KingPhaseCard from "../components/KingPhaseCard";
+import { useEffect, useState } from "react";
+import React from "react";
+
+const useMediaQuery = (query) => {
+  const [matches, setMatches] = useState(window.matchMedia(query).matches);
+
+  useEffect(() => {
+    const mediaQueryList = window.matchMedia(query);
+
+    const handleResize = () => {
+      setMatches(mediaQueryList.matches);
+    };
+
+    mediaQueryList.addListener(handleResize);
+
+    // Initial check
+    handleResize();
+
+    // Cleanup the listener when the component unmounts
+    return () => {
+      mediaQueryList.removeListener(handleResize);
+    };
+  }, [query]);
+
+  return matches;
+};
 
 export default function Home() {
   const isDesktop = useMediaQuery("(min-width:960px)");

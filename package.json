@@ -8,12 +8,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "npm install --force && vercel --prod"
+    "deploy": "npm install --force && vercel --prod --force"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
-    "@material-ui/core": "^4.12.4",
     "@mui/material": "^5.12.2",
     "@mui/system": "^5.12.1",
     "@types/node": "18.15.13",
