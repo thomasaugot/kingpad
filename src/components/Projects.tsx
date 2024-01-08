@@ -33,7 +33,7 @@ const Projects = ({ projects }: Props) => {
       startDate: "20 | 14 | 34 | 12",
       status: "UPCOMING",
       image: "/img/placeholder-colored.PNG",
-      icon: "/img/Group_39.svg",
+      icon: "/img/Group_39.SVG",
     },
     {
       projectName: "Project Name",
@@ -41,7 +41,7 @@ const Projects = ({ projects }: Props) => {
       startDate: "TBA",
       status: "UPCOMING",
       image: "/img/placeholder2.PNG",
-      icon: "/img/Group_39.svg",
+      icon: "/img/Group_39.SVG",
     },
   ]);
 

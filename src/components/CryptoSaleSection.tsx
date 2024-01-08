@@ -138,7 +138,7 @@ const CryptoSaleSection = ({ projects }: Props) => {
           </div>
           <Image
             alt="icon"
-            src="/img/Group_17.svg"
+            src="/img/Group_17.SVG"
             width="37"
             height="29"
             className="relative top-[-310px] left-[280px] md:top-[-64px] md:left-[490px] lg:top-[-130px] lg:left-[-60px] z-10 "

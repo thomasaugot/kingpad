@@ -57,7 +57,7 @@ const KingPhaseCard = ({ phases }: Props) => {
   const [KingPhaseCardsList, setKingPhaseCardsList] = useState<KingPhaseCard[]>([
     {
       number: "PHASE 1",
-      logo: "/img/logo-star.svg",
+      logo: "/img/logo-star.SVG",
       title: "Kingstarter",
       description:
         "Early investing guaranteed. The Kingstarter is the very first launching phase at Kingpad, where users that hold a Kingpass are able to get a secured allocation before anyone else.",
@@ -66,7 +66,7 @@ const KingPhaseCard = ({ phases }: Props) => {
     },
     {
       number: "PHASE 2",
-      logo: "/img/logo-diamond.svg",
+      logo: "/img/logo-diamond.SVG",
       title: "Kingsale",
       description:
         "Both for public and whitelisted investors. Work for your whitelist to invest before public users during the first two hours.",
@@ -166,7 +166,7 @@ const KingPhaseCard = ({ phases }: Props) => {
           <div className="inline-block w-auto relative hover:-translate-y-2 transform transition-all duration-300">
             <TransparentButton onClick={handleTelegramButtonClick}>
               <div className="flex align-middle space-x-3">
-                <ReactSVG src="/img/telegram-rounded-blue.svg" />
+                <ReactSVG src="/img/telegram-rounded-blue.SVG" />
                 <span className="flex my-auto">Join Now</span>
               </div>
             </TransparentButton>

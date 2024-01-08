@@ -18,19 +18,19 @@ const Socials: React.FC = () => {
   return (
     <div className="w-[260px] [&_svg]:w-[30px] [&_svg]:h-8 flex justify-between text-center md:w-[300px]">
       <Link href={""} data-social-media-name="Twitter" onClick={handleLinkClick}>
-        <ReactSVG src="/img/Twitter.svg" className="social-links" />
+        <ReactSVG src="/img/Twitter.SVG" className="social-links" />
       </Link>
       <Link href={""} data-social-media-name="Telegram" onClick={handleLinkClick}>
-        <ReactSVG src="/img/Telegram.svg" className="social-links" />
+        <ReactSVG src="/img/Telegram.SVG" className="social-links" />
       </Link>
       <Link href={""} data-social-media-name="YouTube" onClick={handleLinkClick}>
-        <ReactSVG src="/img/youtube.svg" className="social-links" />
+        <ReactSVG src="/img/youtube.SVG" className="social-links" />
       </Link>
       <Link href={""} data-social-media-name="Medium" onClick={handleLinkClick}>
-        <ReactSVG src="/img/Medium.svg" className="social-links" />
+        <ReactSVG src="/img/Medium.SVG" className="social-links" />
       </Link>
       <Link href={""} data-social-media-name="Discord" onClick={handleLinkClick}>
-        <ReactSVG src="/img/Discord.svg" className="social-links" />
+        <ReactSVG src="/img/Discord.SVG" className="social-links" />
       </Link>
     </div>
   );
