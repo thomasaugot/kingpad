@@ -140,7 +140,7 @@ a {
 }
 
 .background-glow {
-  background-image: url("../../public/img/glow.PNG");
+  background-image: url("/public/img/Glow.PNG");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;

@@ -57,7 +57,7 @@ const CryptoSaleSection = ({ projects }: Props) => {
 
   const [projectList, setProjectList] = useState<Project[]>([
     {
-      image: "/img/mario-new.svg",
+      image: "/img/Mario-new.SVG",
       action: "SALE IN PROGRESS",
       actionTwo: "NEXT LAUNCH",
       projectName: "Project Name",
