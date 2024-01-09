@@ -27,7 +27,7 @@ const ProjectSocials: React.FC = () => {
         <ReactSVG src="/img/Telegram.svg" className="media-icon mt-0 mr-[-1px]" />
       </Link>
       <Link href={""} data-social-media-name="YouTube" onClick={handleLinkClick}>
-        <ReactSVG src="/img/youtube.svg" className="media-icon mt-0 mr-[-1px]" />
+        <ReactSVG src="/img/Youtube.svg" className="media-icon mt-0 mr-[-1px]" />
       </Link>
       <Link href={""} data-social-media-name="Discord" onClick={handleLinkClick}>
         <ReactSVG src="/img/Discord.svg" className="media-icon mt-0 mr-[-1px]" />
