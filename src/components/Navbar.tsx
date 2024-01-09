@@ -96,13 +96,19 @@ const Navbar = (): JSX.Element => {
                       SOON
                     </span>
                   </Link>
-                  <Link href="/" className="text-kp-dark font-bold text-[15px] submenu-navlink">
+                  <Link
+                    href="https://kingpad.finance/audit"
+                    className="text-kp-dark font-bold text-[15px] submenu-navlink"
+                  >
                     <span>
                       <ReactSVG className="inline-flex w-3 h-3" src="/img/Audit-icon.svg" />
                     </span>{" "}
                     Audit
                   </Link>
-                  <Link href="/" className="text-kp-dark font-bold text-[15px] submenu-navlink">
+                  <Link
+                    href="https://kingpad.finance/kyc"
+                    className="text-kp-dark font-bold text-[15px] submenu-navlink"
+                  >
                     <span>
                       <ReactSVG className="inline-flex w-3 h-3" src="/img/KYC-icon.svg" />
                     </span>{" "}
@@ -111,13 +117,16 @@ const Navbar = (): JSX.Element => {
                 </div>
               )}
 
-              <Link href="/" className="nav-link hover:font-black">
+              <Link
+                href="https://king-finance.gitbook.io/king-whitepaper/welcome-to-king./what-is-usdking"
+                className="nav-link hover:font-black"
+              >
                 About
               </Link>
-              <Link href="/" className="nav-link hover:font-black">
+              <Link href="https://kingpass.finance/" className="nav-link hover:font-black">
                 Kingpass
               </Link>
-              <Link href="/" className="nav-link hover:font-black">
+              <Link href="https://kingworld.finance/" className="nav-link hover:font-black">
                 $KING
               </Link>
             </div>

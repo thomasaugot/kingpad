@@ -1,7 +1,20 @@
 import React from "react";
 import TransparentButton from "./TransparentButton";
+import Link from "next/link";
 
 function ApplySection(): JSX.Element {
+  const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    event.preventDefault();
+    const url = event.currentTarget.href;
+    const socialMediaName = event.currentTarget.dataset.socialMediaName;
+    const openAppPrompt = confirm(`Do you want to open ${socialMediaName}?`);
+    if (openAppPrompt) {
+      window.location.href = `app://${url}`;
+    } else {
+      window.open(url, "_blank");
+    }
+  };
+
   return (
     <div className="flex flex-col space-y-5 lg:space-y-0 lg:flex-row lg:justify-between bg-kp-dark py-[40px] px-[30px] lg:p-[50px] lg:pr-[60px] max-w-[348px] md:max-w-[680px] md:h-[351px] lg:max-w-[1120px] lg:h-[191px] rounded-2xl mx-auto">
       <div className="order-1 flex items-center">
@@ -16,7 +29,14 @@ function ApplySection(): JSX.Element {
       </div>
       <div className="flex justify-center items-center order-3 lg:order-2 pt-4 md:pt-0">
         <TransparentButton>
-          <span className="whitespace-nowrap">Apply now</span>
+          <Link
+            href={"https://discord.com/invite/gtzFGPacK9"}
+            data-social-media-name="Discord"
+            className="whitespace-nowrap font-bold"
+            onClick={handleLinkClick}
+          >
+            Apply now
+          </Link>
         </TransparentButton>
       </div>
       <div className="flex lg:basis-1/3 justify-between md:justify-evenly lg:justify-between order-2 lg:order-3">

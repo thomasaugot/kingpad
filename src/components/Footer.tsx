@@ -29,19 +29,25 @@ const Footer: React.FC = () => {
           </div>
           <div className="flex flex-col text-[15px] space-y-3 mb-8 lg:mb-0 lg:basis-1/4 lg:min-w-[120px]">
             <h4 className="text-kp-purple">Company</h4>
-            <Link href={"/"}>About us</Link>
-            <Link href={"/"}>Contact us</Link>
+            <Link
+              href={
+                "https://king-finance.gitbook.io/king-whitepaper/welcome-to-king./what-is-usdking"
+              }
+            >
+              About us
+            </Link>
+            <Link href={"https://t.me/kingpadannouncements"}>Contact us</Link>
           </div>
           <div className="flex flex-col text-[15px] space-y-3 lg:ml-28 lg:basis-1/4 lg:min-w-[120px]">
             <h4 className="text-kp-purple">Ecosystem</h4>
-            <Link href={"/"}>King</Link>
-            <Link href={"/"}>Kingpass</Link>
-            <Link href={"/"}>Kingfloki</Link>
+            <Link href={"https://kingworld.finance/"}>King</Link>
+            <Link href={"https://kingpass.finance/"}>Kingpass</Link>
+            <Link href={"https://kingfloki.finance/"}>Kingfloki</Link>
           </div>
           <div className="flex flex-col text-[15px] space-y-3 lg:ml-28 lg:basis-1/4 lg:min-w-[120px]">
             <h4 className="text-kp-purple">Legal</h4>
-            <Link href={"/"}>Terms of Use</Link>
-            <Link href={"/"}>Privacy Policy</Link>
+            <Link href={"https://kingworld.finance/terms"}>Terms of Use</Link>
+            <Link href={"https://kingworld.finance/privacy"}>Privacy Policy</Link>
           </div>
         </div>
       </div>

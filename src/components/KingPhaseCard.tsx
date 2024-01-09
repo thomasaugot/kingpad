@@ -93,7 +93,7 @@ const KingPhaseCard = ({ phases }: Props) => {
   };
 
   const handleTelegramButtonClick = () => {
-    const telegramURL = "https://...";
+    const telegramURL = "https://t.me/kingpadannouncements";
     window.open(telegramURL, "_blank");
   };
 
