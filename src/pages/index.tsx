@@ -52,8 +52,9 @@ export default function Home() {
         <Header />
         <ApplySection />
         <CryptoLogos />
-        <CryptoSaleSection projects={[]} />
+        {/* <CryptoSaleSection projects={[]} /> */}
         <MintPassSection />
+        <br />
         <Projects projects={[]} />
         <KingPhaseCard phases={[]} />
         <Footer />

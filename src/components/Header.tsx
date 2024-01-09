@@ -41,8 +41,8 @@ const Header: React.FC = () => {
         <Image
           className="absolute max-w-[1400px] z-[-1] right-[-550px] lg:right-[-450px]
               top-[-440px]"
-          alt="Glow"
-          src="/img/Glow.PNG"
+          alt="glow"
+          src="/img/glow.PNG"
           width="1400"
           height="800"
         />
