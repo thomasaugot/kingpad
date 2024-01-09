@@ -10,7 +10,7 @@ const MintPassSection = () => {
           <Image
             className="object-cover z-10 mx-auto md:h-[289px] md:[205px] "
             alt="kingpass"
-            src="/img/Kingpass-card.PNG"
+            src="/img/Kingpass-card.png"
             width="189"
             height="236"
           />

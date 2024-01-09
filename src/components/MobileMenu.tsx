@@ -48,7 +48,7 @@ const MobileMenu = (): JSX.Element => {
               onClick={() => {
                 window.location.href = "/";
               }}
-              src="/img/kingpad_logo.SVG"
+              src="/img/kingpad_logo.svg"
             />
           ) : (
             <ReactSVG
@@ -56,22 +56,22 @@ const MobileMenu = (): JSX.Element => {
               onClick={() => {
                 window.location.href = "/";
               }}
-              src="/img/kingpad-logo-mobile.SVG"
+              src="/img/kingpad-logo-mobile.svg"
             />
           )}
           <div>
             <div>
               <button className="[&_svg]:w-[30px] [&_svg]:h-[30px]" onClick={toggleMenu}>
-                <ReactSVG src="/img/Menu-burger.SVG" />
+                <ReactSVG src="/img/Menu-burger.svg" />
               </button>
               {menuOpen && (
                 <div className="fixed inset-0 menu-background-gradient z-50 flex flex-col">
                   <div className="flex justify-between p-8">
                     <div>
                       {isTablet ? (
-                        <ReactSVG className="w-[29px] h-[29px]" src="/img/logo-menu-tablet.SVG" />
+                        <ReactSVG className="w-[29px] h-[29px]" src="/img/logo-menu-tablet.svg" />
                       ) : (
-                        <ReactSVG src="/img/Logo-menu.SVG" />
+                        <ReactSVG src="/img/Logo-menu.svg" />
                       )}
                     </div>
                     <button className="text-white hover:text-gray-300" onClick={toggleMenu}>
@@ -100,7 +100,7 @@ const MobileMenu = (): JSX.Element => {
                         >
                           Services{" "}
                           <ReactSVG
-                            src="/img/arrow-down.SVG"
+                            src="/img/arrow-down.svg"
                             className="inline-flex w-3 h-3 pt-4 ml-5"
                           />
                         </AccordionSummary>
@@ -114,7 +114,7 @@ const MobileMenu = (): JSX.Element => {
                             <span>
                               <ReactSVG
                                 className="inline-flex w-3 h-3"
-                                src="/img/Launchpad-icon.SVG"
+                                src="/img/Launchpad-icon.svg"
                                 style={{ stroke: "white" }}
                               />
                             </span>{" "}
@@ -127,7 +127,7 @@ const MobileMenu = (): JSX.Element => {
                             <span>
                               <ReactSVG
                                 className="inline-flex w-3 h-3"
-                                src="/img/Kinglock-icon.SVG"
+                                src="/img/Kinglock-icon.svg"
                                 style={{ stroke: "white" }}
                               />
                             </span>{" "}
@@ -145,7 +145,7 @@ const MobileMenu = (): JSX.Element => {
                             <span>
                               <ReactSVG
                                 className="inline-flex w-3 h-3"
-                                src="/img/Audit-icon.SVG"
+                                src="/img/Audit-icon.svg"
                                 style={{ stroke: "white" }}
                               />
                             </span>{" "}
@@ -158,7 +158,7 @@ const MobileMenu = (): JSX.Element => {
                             <span>
                               <ReactSVG
                                 className="inline-flex w-3 h-3"
-                                src="/img/KYC-icon.SVG"
+                                src="/img/KYC-icon.svg"
                                 style={{ stroke: "white" }}
                               />
                             </span>{" "}

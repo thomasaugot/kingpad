@@ -57,7 +57,7 @@ const CryptoSaleSection = ({ projects }: Props) => {
 
   const [projectList, setProjectList] = useState<Project[]>([
     {
-      image: "/img/Mario-new.SVG",
+      image: "/img/mario.PNG",
       action: "SALE IN PROGRESS",
       actionTwo: "NEXT LAUNCH",
       projectName: "Project Name",
@@ -82,7 +82,7 @@ const CryptoSaleSection = ({ projects }: Props) => {
           <div
             className="rounded-t-2xl lg:rounded-none lg:rounded-l-2xl relative lg:w-[50%] h-[339px] md:h-[271px] lg:h-[368px]"
             style={{
-              backgroundImage: `url(${project?.image})`,
+              backgroundImage: `url(${project.image})`,
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
@@ -119,7 +119,7 @@ const CryptoSaleSection = ({ projects }: Props) => {
                   <p className="flex flex-col items-center justify-center border-2 rounded-xl border-white py-[10px] px-[5px] text-center w-[106px] h-[85px] md:h-[101px] lg:h-[98px] mx-[1px]">
                     <Image
                       alt="Elipse"
-                      src="/img/Ellipse Green.PNG"
+                      src="/img/Ellipse Green.png"
                       width="23"
                       height="23"
                       className="mx-auto mt-1 mb-2"
@@ -138,7 +138,7 @@ const CryptoSaleSection = ({ projects }: Props) => {
           </div>
           <Image
             alt="icon"
-            src="/img/Group_17.SVG"
+            src="/img/Group_17.svg"
             width="37"
             height="29"
             className="relative top-[-310px] left-[280px] md:top-[-64px] md:left-[490px] lg:top-[-130px] lg:left-[-60px] z-10 "

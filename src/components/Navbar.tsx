@@ -50,7 +50,7 @@ const Navbar = (): JSX.Element => {
             onClick={() => {
               window.location.href = "/";
             }}
-            src="/img/kingpad_logo.SVG"
+            src="/img/kingpad_logo.svg"
           />
           <div className="hidden lg:flex items-center justify-center whitespace-nowrap text-[14px] text-white lg:ml-4 lg:text-[12px] ">
             <div className="hidden items-center text-[14px] [&>a]:pr-2 text-white [&>a]:text-[16px] [&>a]:pt-4 lg:ml-8 lg:flex lg:space-x-[80px] xl:ml-20 ">
@@ -83,13 +83,13 @@ const Navbar = (): JSX.Element => {
                 >
                   <Link href="/" className="text-kp-dark font-bold text-[15px] submenu-navlink">
                     <span>
-                      <ReactSVG className="inline-flex w-3 h-3" src="/img/Launchpad-icon.SVG" />
+                      <ReactSVG className="inline-flex w-3 h-3" src="/img/Launchpad-icon.svg" />
                     </span>{" "}
                     Launchpad
                   </Link>
                   <Link href="/" className="text-kp-dark font-bold text-[15px] submenu-navlink">
                     <span>
-                      <ReactSVG className="inline-flex w-3 h-3" src="/img/Kinglock-icon.SVG" />
+                      <ReactSVG className="inline-flex w-3 h-3" src="/img/Kinglock-icon.svg" />
                     </span>{" "}
                     King Lock{" "}
                     <span className="inline-flex text-white text-[8px] font-bold bg-kp-purple p-1 mb-1 rounded-2xl">
@@ -98,13 +98,13 @@ const Navbar = (): JSX.Element => {
                   </Link>
                   <Link href="/" className="text-kp-dark font-bold text-[15px] submenu-navlink">
                     <span>
-                      <ReactSVG className="inline-flex w-3 h-3" src="/img/Audit-icon.SVG" />
+                      <ReactSVG className="inline-flex w-3 h-3" src="/img/Audit-icon.svg" />
                     </span>{" "}
                     Audit
                   </Link>
                   <Link href="/" className="text-kp-dark font-bold text-[15px] submenu-navlink">
                     <span>
-                      <ReactSVG className="inline-flex w-3 h-3" src="/img/KYC-icon.SVG" />
+                      <ReactSVG className="inline-flex w-3 h-3" src="/img/KYC-icon.svg" />
                     </span>{" "}
                     KYC
                   </Link>
