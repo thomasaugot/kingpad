@@ -24,7 +24,7 @@ const Socials: React.FC = () => {
         <ReactSVG src="/img/Telegram.svg" className="social-links" />
       </Link>
       <Link href={""} data-social-media-name="YouTube" onClick={handleLinkClick}>
-        <ReactSVG src="/img/youtube.svg" className="social-links" />
+        <ReactSVG src="/img/Youtube.svg" className="social-links" />
       </Link>
       <Link href={""} data-social-media-name="Medium" onClick={handleLinkClick}>
         <ReactSVG src="/img/Medium.svg" className="social-links" />
