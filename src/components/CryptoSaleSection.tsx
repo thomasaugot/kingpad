@@ -57,7 +57,7 @@ const CryptoSaleSection = ({ projects }: Props) => {
 
   const [projectList, setProjectList] = useState<Project[]>([
     {
-      image: "/img/mario.PNG",
+      image: "/img/mario-new.svg",
       action: "SALE IN PROGRESS",
       actionTwo: "NEXT LAUNCH",
       projectName: "Project Name",
@@ -82,7 +82,7 @@ const CryptoSaleSection = ({ projects }: Props) => {
           <div
             className="rounded-t-2xl lg:rounded-none lg:rounded-l-2xl relative lg:w-[50%] h-[339px] md:h-[271px] lg:h-[368px]"
             style={{
-              backgroundImage: `url(${project.image})`,
+              backgroundImage: `url(${project?.image})`,
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
