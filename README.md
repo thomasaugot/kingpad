@@ -2,7 +2,7 @@
 
 ![app photo](/readme-pic.png)
 
-A complex landing page I build for a crypto startup.
+A landing page I build for a Dubai-based crypto startup.
 
 Tech stack:
 
